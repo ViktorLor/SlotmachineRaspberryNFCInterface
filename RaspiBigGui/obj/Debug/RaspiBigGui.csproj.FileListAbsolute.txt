@@ -3,3 +3,4 @@
 /home/vik/RiderProjects/DiplomClienten/RaspiBigGui/obj/Debug/RaspiBigGui.csproj.CoreCompileInputs.cache
 /home/vik/RiderProjects/DiplomClienten/RaspiBigGui/obj/Debug/RaspiBigGui.exe
 /home/vik/RiderProjects/DiplomClienten/RaspiBigGui/obj/Debug/RaspiBigGui.pdb
+/home/vik/RiderProjects/DiplomClienten/RaspiBigGui/obj/Debug/RaspiBigGui.csprojAssemblyReference.cache

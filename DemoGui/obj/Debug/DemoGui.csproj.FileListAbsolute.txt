@@ -3,3 +3,4 @@
 /home/vik/RiderProjects/DiplomClienten/DemoGui/obj/Debug/DemoGui.csproj.CoreCompileInputs.cache
 /home/vik/RiderProjects/DiplomClienten/DemoGui/obj/Debug/DemoGui.exe
 /home/vik/RiderProjects/DiplomClienten/DemoGui/obj/Debug/DemoGui.pdb
+/home/vik/RiderProjects/DiplomClienten/DemoGui/obj/Debug/DemoGui.csprojAssemblyReference.cache
