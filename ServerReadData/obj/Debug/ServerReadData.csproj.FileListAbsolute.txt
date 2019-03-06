@@ -1,0 +1,5 @@
+/home/vik/RiderProjects/DiplomClienten/ServerReadData/bin/Debug/ServerReadData.exe
+/home/vik/RiderProjects/DiplomClienten/ServerReadData/bin/Debug/ServerReadData.pdb
+/home/vik/RiderProjects/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.csproj.CoreCompileInputs.cache
+/home/vik/RiderProjects/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.exe
+/home/vik/RiderProjects/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.pdb

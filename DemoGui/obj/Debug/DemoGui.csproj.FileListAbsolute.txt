@@ -1,0 +1,5 @@
+/home/vik/RiderProjects/DiplomClienten/DemoGui/bin/Debug/DemoGui.exe
+/home/vik/RiderProjects/DiplomClienten/DemoGui/bin/Debug/DemoGui.pdb
+/home/vik/RiderProjects/DiplomClienten/DemoGui/obj/Debug/DemoGui.csproj.CoreCompileInputs.cache
+/home/vik/RiderProjects/DiplomClienten/DemoGui/obj/Debug/DemoGui.exe
+/home/vik/RiderProjects/DiplomClienten/DemoGui/obj/Debug/DemoGui.pdb

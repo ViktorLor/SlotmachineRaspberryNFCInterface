@@ -1,0 +1,3 @@
+sleep 2
+touch /home/pi/ClientVertrag/Files/UID.txt
+echo s00000000005AF34E > /home/pi/ClientVertrag/UID.txt

@@ -1,0 +1,5 @@
+sleep 2
+touch /home/vik/RiderProjects/DiplomClienten/DiplomDemoGui/Files/UID.txt
+echo s00000000005AF34E > /home/vik/RiderProjects/DiplomClienten/DiplomDemoGui/Files/UID.txt
+#touch /home/pi/ClientDebug/Files/UID.txt
+#echo s00000000005AF34E > /home/pi/ClientDebug/UID.txt

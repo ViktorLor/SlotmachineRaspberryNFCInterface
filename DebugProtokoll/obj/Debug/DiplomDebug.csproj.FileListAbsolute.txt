@@ -1,0 +1,6 @@
+/home/vik/RiderProjects/DiplomClienten/DiplomDebug/bin/Debug/DiplomDebug.exe
+/home/vik/RiderProjects/DiplomClienten/DiplomDebug/bin/Debug/DiplomDebug.pdb
+/home/vik/RiderProjects/DiplomClienten/DiplomDebug/obj/Debug/DiplomDebug.csprojAssemblyReference.cache
+/home/vik/RiderProjects/DiplomClienten/DiplomDebug/obj/Debug/DiplomDebug.csproj.CoreCompileInputs.cache
+/home/vik/RiderProjects/DiplomClienten/DiplomDebug/obj/Debug/DiplomDebug.exe
+/home/vik/RiderProjects/DiplomClienten/DiplomDebug/obj/Debug/DiplomDebug.pdb

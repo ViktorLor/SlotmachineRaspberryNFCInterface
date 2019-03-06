@@ -1,0 +1,3 @@
+sleep 2
+touch /home/vik/RiderProjects/DiplomClienten/DiplomRaspi/Files
+echo s00000000000041D390F3 > /home/vik/RiderProjects/DiplomClienten/DiplomRaspi/Files

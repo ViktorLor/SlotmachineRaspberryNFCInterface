@@ -1,0 +1,6 @@
+/home/vik/RiderProjects/DiplomClienten/DebugProtokoll/bin/Debug/DebugProtokoll.exe
+/home/vik/RiderProjects/DiplomClienten/DebugProtokoll/bin/Debug/DebugProtokoll.pdb
+/home/vik/RiderProjects/DiplomClienten/DebugProtokoll/obj/Debug/DebugProtokoll.csprojAssemblyReference.cache
+/home/vik/RiderProjects/DiplomClienten/DebugProtokoll/obj/Debug/DebugProtokoll.csproj.CoreCompileInputs.cache
+/home/vik/RiderProjects/DiplomClienten/DebugProtokoll/obj/Debug/DebugProtokoll.exe
+/home/vik/RiderProjects/DiplomClienten/DebugProtokoll/obj/Debug/DebugProtokoll.pdb

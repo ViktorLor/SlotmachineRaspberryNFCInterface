@@ -1,0 +1,6 @@
+/home/vik/RiderProjects/DiplomClienten/DiplomRaspi/bin/Debug/DiplomRaspi.exe
+/home/vik/RiderProjects/DiplomClienten/DiplomRaspi/bin/Debug/DiplomRaspi.pdb
+/home/vik/RiderProjects/DiplomClienten/DiplomRaspi/obj/Debug/DiplomRaspi.csprojAssemblyReference.cache
+/home/vik/RiderProjects/DiplomClienten/DiplomRaspi/obj/Debug/DiplomRaspi.csproj.CoreCompileInputs.cache
+/home/vik/RiderProjects/DiplomClienten/DiplomRaspi/obj/Debug/DiplomRaspi.exe
+/home/vik/RiderProjects/DiplomClienten/DiplomRaspi/obj/Debug/DiplomRaspi.pdb
