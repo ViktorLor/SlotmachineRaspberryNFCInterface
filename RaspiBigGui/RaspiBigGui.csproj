@@ -65,6 +65,9 @@
     <Content Include="Files\Source\saldo.txt" />
     <Content Include="Files\Productlist.txt" />
     <Content Include="Files\UID.txt" />
+    <Content Include="Form1.resx" />
+    <Content Include="Form2.resx" />
+    <Content Include="Form3.resx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\SendData" />
