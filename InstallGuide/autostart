@@ -1,0 +1,2 @@
+sudo echo "@/bin/bash /home/pi/startscript" >> /etc/xdg/lxsession/LXDE-pi/autostart
+mv startscript /home/pi/
