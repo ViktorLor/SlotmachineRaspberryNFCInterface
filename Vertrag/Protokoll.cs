@@ -30,7 +30,6 @@ namespace Prototype
 
             return sb.ToString();
         }
-
         private static void SendBytes(string data, Stream nwstream) //adjusts bytes to protocoll
         {
             byte[] ba = Encoding.UTF8.GetBytes(data);
