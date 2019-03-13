@@ -17,14 +17,6 @@ namespace Prototype
 	
 	public partial class Form2 : Form
 	{
-	
-		public static string UID = null;
-		public static string name = null;
-		public static string surname = null;
-		public static int age = 0;
-		public static double saldo = 0;
-		public static double limit = 0;
-
 		public Form2()
 		{
 			InitializeComponent();
@@ -44,20 +36,20 @@ namespace Prototype
 		{
 			Application.DoEvents();							//initialisieren
 			this.Activated -= AfterLoading;
-			while (UID == null)
+			while (Program.UID == null)
 			{
 				this.Show();
 
-				UID = NFC_in();
+				Program.UID = NFC_in();
 
-				if (UID != null /*&& age >= 16 /*&& contract == true*/) //auf ID, altersbeschränkung und haftschutzvertrag prüfen
+				if (Program.UID != null /*&& age >= 16 /*&& contract == true*/) //auf ID, altersbeschränkung und haftschutzvertrag prüfen
 				{
 					getnameHelper();
-					name = readName();
-					surname = readSurname();
-					age = readAge();
-					saldo = readSaldo();
-					limit = readLimit();
+					Program.name = readName();
+					Program.surname = readSurname();
+					Program.age = readAge();
+					Program.saldo = readSaldo();
+					Program.limit = readLimit();
 					//read security contract
 					if (File.Exists(Program.filepathResponse + "responsegetname.txt"))
 						File.Delete(Program.filepathResponse + "responsegetname.txt");
@@ -71,7 +63,7 @@ namespace Prototype
 				}
 
 
-				UID = null; //ID für neuen kunden zurücksetzten
+				Program.UID = null; //ID für neuen kunden zurücksetzten
 			}
 		}
 
@@ -162,7 +154,7 @@ namespace Prototype
 			string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
 
 			string text = File.ReadAllText(sourceFile, Encoding.UTF8);
-			text = text.Replace("%uid%", Form2.UID);
+			text = text.Replace("%uid%", Program.UID);
 			File.WriteAllText(targetFile, text);
 			Protokoll.SaldoData();
 			
@@ -190,21 +182,18 @@ namespace Prototype
 
 		private void getnameHelper()
 		{
-			
 		string fileName = "getname.txt";
 
 		string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);
 		string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
 
 		string text = File.ReadAllText(sourceFile);
-		text = text.Replace("%uid%", Form2.UID);
+		text = text.Replace("%uid%", Program.UID);
 		File.WriteAllText(targetFile, text);
 
 		Protokoll.getNameData();
 		
 		}
-
-
 	}
 }
 
