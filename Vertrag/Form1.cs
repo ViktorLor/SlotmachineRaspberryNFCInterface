@@ -16,16 +16,16 @@ namespace Prototype
     public partial class Form1 : Form
     {
         string product_id = null;
-        static int age_requirement = 18;
+		static int age_requirement = 18;
         string product = null;
 
-        public Form1()
+		public Form1()
         {
             InitializeComponent();
-            Thread nfc = new Thread(NFC_in);
-            nfc.Start();
+			Thread nfc = new Thread(NFC_in);
+			nfc.Start();
         }
-
+		
         private void Form1_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
@@ -37,7 +37,7 @@ namespace Prototype
         {
             lbl_display.Text = "Haftungsausschuss Paintball";
             product_id = Program.paintball;
-            age_requirement = 18;
+            age_requirement = 97;
             product = "Paintball";
         }
 
@@ -122,8 +122,6 @@ namespace Prototype
                     lbl_confirm.Text = Program.name + " " + Program.surname + " hat Haftungsausschuss für " + product +
                                        " abgeschlossen";
                 }
-
-                
                 
                 Thread.Sleep(2000);
                 if (lbl_confirm.InvokeRequired)
@@ -247,10 +245,9 @@ namespace Prototype
                     id = lines[0];
                     Program.UID = id;
                 }
-
-
+				
                 check();
             }
         }
-    }
+	}
 }

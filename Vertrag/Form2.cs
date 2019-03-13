@@ -19,17 +19,18 @@ namespace Prototype
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+			btn_oke.Text = "bestätigen";
+			lbl_age.Text = Program.name + " " + Program.surname + " ist zu jung!";
             //doesnt load probably
-            this.TopMost = true;
+            /*this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;*/
         }
 
         private void btn_oke_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-    }
+	}
 }
 

@@ -4,3 +4,12 @@
 /home/vik/RiderProjects/DiplomClienten/Vertrag/obj/Debug/Vertrag.csproj.CoreCompileInputs.cache
 /home/vik/RiderProjects/DiplomClienten/Vertrag/obj/Debug/Vertrag.exe
 /home/vik/RiderProjects/DiplomClienten/Vertrag/obj/Debug/Vertrag.pdb
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\bin\Debug\Vertrag.exe.config
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\bin\Debug\Vertrag.exe
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\bin\Debug\Vertrag.pdb
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\obj\Debug\Vertrag.csprojResolveAssemblyReference.cache
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\obj\Debug\Prototype.Form2.resources
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\obj\Debug\Vertrag.csproj.GenerateResource.Cache
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\obj\Debug\Vertrag.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\obj\Debug\Vertrag.exe
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\Vertrag\obj\Debug\Vertrag.pdb
