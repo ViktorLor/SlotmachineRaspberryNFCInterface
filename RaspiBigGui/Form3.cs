@@ -38,7 +38,6 @@ namespace Prototype
             rescan_id = Form2.NFC_in();
             if (Program.UID == rescan_id)
             {
-                
                 Protokoll.BookData();
                 if (File.Exists(Program.filepathSend + "cmdbook.txt"))
                 	File.Delete(Program.filepathSend + "cmdbook.txt");
