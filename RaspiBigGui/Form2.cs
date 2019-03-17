@@ -76,7 +76,6 @@ namespace Prototype
 			string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
 			id = lines[0];
 
-
 			return id;
 		}
 
@@ -192,7 +191,6 @@ namespace Prototype
 		File.WriteAllText(targetFile, text);
 
 		Protokoll.getNameData();
-		
 		}
 	}
 }
