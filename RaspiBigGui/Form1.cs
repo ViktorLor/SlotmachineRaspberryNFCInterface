@@ -16,10 +16,9 @@ namespace Prototype
 		public static int cnt = 1;
 		public static string productID;
 
-		List<Product> productList = new List<Product>();        //liste zur anzeige der produkte
-		string name, surname, UID;
-		double price, fullprice;
-		int age_rating;
+		protected List<Product> productList = new List<Product>();        //liste zur anzeige der produkte
+		protected double price, fullprice;
+		protected int age_rating;
 
 		public Form1()
 		{
@@ -36,9 +35,6 @@ namespace Prototype
 			lbl_user.Font = new Font("Microsoft Sans Serif", 10);
 			btn_cancel.Font = new Font("Microsoft Sans Serif", 10);
 			btn_confirm.Font = new Font("Microsoft Sans Serif", 10);
-			UID = Form2.UID;
-			name = Form2.name;
-			surname = Form2.surname;
 
 			lbl_displayFullPrice.Text = lbl_displayPrice.Text;
 			btn_confirm.Enabled = false;
@@ -47,25 +43,25 @@ namespace Prototype
 			string[] lines = File.ReadAllLines(Program.filepath + "Productlist.txt", Encoding.UTF8);      //trennen in die einzelnen zeilen
 			foreach (string line in lines)
 			{
-				string[] atributes = line.Split('/');       //jede zeile in die einzelnen bestandteile zerlegen (produktID/name/preis)  "/" als trennzeichen
+				string[] atributes = line.Split('/');			//jede zeile in die einzelnen bestandteile zerlegen (produktID/name/preis)  "/" als trennzeichen
 				Product p = new Product();
 				p.id = atributes[0];                                    //atribute der einzelnen produkte aus der datenbank in die eigene liste einfügen
 				p.name = atributes[1];
 				double.TryParse(atributes[2], out p.price);             //den produktpreis aus der datenbank in einen double wert parsen
 				p.price = p.price / 100; 
 				int.TryParse(atributes[3],  out age_rating);
-				if (age_rating > Form2.age) { }				//auf mindestalter prüfen
+				if (age_rating > Program.age) { }				//auf mindestalter prüfen
 				else
-					productList.Add(p);						//produkte zur liste hinzufügen
+					productList.Add(p);							//produkte zur liste hinzufügen
 			}
 
-			lb_productList.Items.AddRange(productList.ToArray());       //produktliste wird in der listbox angezeigt
+			lb_productList.Items.AddRange(productList.ToArray());			//produktliste wird in der listbox angezeigt
 
 			lb_productList.SetSelected(0, true);
 
-			lbl_user.Text = surname + " " + name + " ";           //aktuellen benutzer anzeigen
-			lbl_bill.Text = string.Format("{0:F2}", Form2.saldo);
-			lbl_limit.Text = string.Format("{0:F2}", Form2.limit);
+			lbl_user.Text = Program.surname + " " + Program.name + " ";           //aktuellen benutzer anzeigen
+			lbl_bill.Text = string.Format("{0:F2}", Program.saldo);
+			lbl_limit.Text = string.Format("{0:F2}", Program.limit);
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -113,7 +109,7 @@ namespace Prototype
 			//price = price / 100;
 			i++;
 			fullprice = i * price;
-			if (fullprice + Form2.saldo > Form2.limit)
+			if (fullprice + Program.saldo > Program.limit)
 			{
 				i--;
 				fullprice = i * price;
@@ -156,14 +152,14 @@ namespace Prototype
 
 		private void lb_productList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			for (int i = 0; i < productList.Count; i++)             //nur ein produkt gleichzeitig auswählbar
+			for (int i = 0; i < productList.Count; i++)								//nur ein produkt gleichzeitig auswählbar
 			{
 				if (lb_productList.GetItemChecked(i))
 				{
 					lb_productList.SetItemChecked(i, false);
 				}
 			}
-			try                                                     //falls index = -1 (wenn ins leere gedrückt wird)
+			try					//falls index = -1 (wenn ins leere gedrückt wird)
 			{
 				lb_productList.SetItemChecked(lb_productList.SelectedIndex, true);
 				btn_confirm.Enabled = true;
@@ -175,19 +171,18 @@ namespace Prototype
 				if (lb_productList.GetItemChecked(i))
 				{
 					lbl_displayPrice.Text = string.Format("{0:F2}", productList[i].price);      //preis des gewählten produktes mit zwei dezimalstellen ausgeben
-					lbl_displayPrice.Text = lbl_displayPrice.Text;
 					lbl_displayProductName.Text = productList[i].name;                          //name des gewählten produktes ausgeben
 					int j;
 					int.TryParse(lbl_displayCount.Text, out j);                                 //den eingestellten zählerwert in einen integer wert parsen
 					double.TryParse(lbl_displayPrice.Text, out price);
-					//price = price / 100;														//den produktpreis in einen double wert parsen
 					fullprice = j * price;
-					while (fullprice + Form2.saldo > Form2.limit)
+					while (fullprice + Program.saldo > Program.limit)
 					{
 						j--;
 						fullprice = j * price;
 					}
 					lbl_displayCount.Text = "" + j;
+					cnt = j;
 					lbl_displayFullPrice.Text = string.Format("{0:F2}", fullprice);             //zeigt den gesammtpreis mit zwei dezimalstellen an
 				}
 			}
@@ -214,7 +209,7 @@ namespace Prototype
 			string targetFile = System.IO.Path.Combine(targetPath, fileName);                       //ziel pfad erstellen
 
 			string text = File.ReadAllText(sourceFile);                                             //template file einlesen
-			text = text.Replace("%uid%", UID);                                                      //daten eintragen
+			text = text.Replace("%uid%", Program.UID);                                                      //daten eintragen
 			for (int i = 0; i < productList.Count; i++)
 			{
 				if (lb_productList.GetItemChecked(i))

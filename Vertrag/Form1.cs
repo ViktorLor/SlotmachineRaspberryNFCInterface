@@ -37,7 +37,7 @@ namespace Prototype
         {
             lbl_display.Text = "Haftungsausschuss Paintball";
             product_id = Program.paintball;
-            age_requirement = 97;
+            age_requirement = 18;
             product = "Paintball";
         }
 

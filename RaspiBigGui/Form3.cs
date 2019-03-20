@@ -36,9 +36,8 @@ namespace Prototype
             this.Show();
             this.Activated -= AfterLoading;
             rescan_id = Form2.NFC_in();
-            if (Form2.UID == rescan_id)
+            if (Program.UID == rescan_id)
             {
-                
                 Protokoll.BookData();
                 if (File.Exists(Program.filepathSend + "cmdbook.txt"))
                 	File.Delete(Program.filepathSend + "cmdbook.txt");
@@ -56,19 +55,19 @@ namespace Prototype
             }
         }
 
-        public static void wait(int min)       //wait funktion
+        public static void wait(int mil)
         {
             System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
-            if (min == 0 || min < 0) return;
-            timer1.Interval = min;
+            if (mil == 0 || mil < 0) return;	//prüfen ob parameter <= 0	
+            timer1.Interval = mil;
             timer1.Enabled = true;
             timer1.Start();
-            timer1.Tick += (s, e) =>
+            timer1.Tick += (s, e) =>			
             {
                 timer1.Enabled = false;
                 timer1.Stop();
             };
-            while (timer1.Enabled)
+            while (timer1.Enabled)				//bei jedem timertick gui aktualisieren
             {
                 Application.DoEvents();
             }
