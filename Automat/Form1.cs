@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 
-namespace Automat_GUI
+namespace Prototype
 {
 	public partial class Form1 : Form
 	{

@@ -79,7 +79,6 @@ namespace Prototype
 		{
 			string id = "null";
 			Process process1 = Process.Start("/bin/bash", "-c \"/home/pi/Client/a.out\"");
-			//Process process1 = Process.Start("/bin/bash", "-c \"/home/vik/RiderProjects/DiplomClienten/DemoGui/a.out\"");
 			process1.WaitForExit();
 			string text = File.ReadAllText(Program.filepath + "UID.txt", Encoding.UTF8);
 			string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);

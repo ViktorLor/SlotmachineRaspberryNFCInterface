@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Automat_GUI
+namespace Prototype
 {
 	static class Program
 	{
@@ -21,6 +21,7 @@ namespace Automat_GUI
 		public static string filepathResponse = "/home/pi/Client/Files/Response/";
 		public static string filepathSource = "/home/pi/Client/Files/Source/";
 		public static string filepath = "/home/pi/Client/Files/";
+		public static int foreignsystem = 104;
 		[STAThread]
 		static void Main()
 		{
