@@ -1,4 +1,4 @@
-
+//Scanner
 // COMPILE:  "gcc -o main main.c -lnfc"
 
 #include <stdlib.h>
@@ -68,7 +68,6 @@ int main(int argc, const char *argv[]) {
         for (int i = 3; i >= 0; i--) {
             fprintf(fp, "%02X", nt.nti.nai.abtUid[i]);
         }
-        break;
     }
     // Close NFC device
     nfc_close(pnd);

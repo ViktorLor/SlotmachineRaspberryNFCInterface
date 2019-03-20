@@ -4,7 +4,7 @@ sudo apt-get -y install mono-xsp4 sudo apt-get -y install subversion autoconf de
 
 #startscript
 sudo echo "@/bin/bash /home/pi/startscript" >> /etc/xdg/lxsession/LXDE-pi/autostart
-echo "mono ~/ClientVertrag/DiplomVertrag.exe" >> ~/startscript
+echo "mono ~/ClientVertrag/Vertrag.exe" >> ~/startscript
 
 #nfclib
 wget https://github.com/nfc-tools/libnfc/releases/download/libnfc-1.7.0-rc7/libnfc-1.7.0-rc7.tar.gz
@@ -15,5 +15,11 @@ make
 sudo make install
 sudo sh -c "echo /usr/local/lib > /etc/ld.so.conf.d/usr-local-lib.conf"
 sudo ldconfig
-gcc -o Scanner.out main.c -lnfc
+cd ~
+gcc -o Scanner.out scanner.c -lnfc
 mv Scanner.out ~/ClientVertrag
+cd ~
+
+ #
+ gcc -o automat.out automat1.c
+ 

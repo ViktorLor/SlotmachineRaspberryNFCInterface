@@ -35,14 +35,14 @@ namespace GetArticleList
             }
 
             using (var conn = new SqlConnection(GetConnectionString()))
-            using (var command = new SqlCommand(query, conn))
+            using (var sqlcommand = new SqlCommand(query, conn))
             {
                 try
                 {
                     conn.Open();
                     File.Delete(Program.filepath + "pricelist.txt");
 
-                    using (SqlDataReader rdr = command.ExecuteReader())
+                    using (SqlDataReader rdr = sqlcommand.ExecuteReader())
                     {
                         while (rdr.Read())
                         {
@@ -50,7 +50,6 @@ namespace GetArticleList
                             article.ArticleID = Convert.ToInt32(rdr["Article"]);
                             article.Name = rdr["Articlename"].ToString();
                             article.Price = Convert.ToDecimal(rdr["Price"]);
-                            //change to /home/pi/Client/Files/Productlist.txt
                             File.AppendAllText(Program.filepath + "pricelist.txt",
                                 article.ArticleID + "/" + article.Name + "/" + article.Price + "\n");
                         }
@@ -73,10 +72,8 @@ namespace GetArticleList
             conBuilder.UserID = "Statistic";
             conBuilder.Password = "WgdBz0n!";
             conBuilder.ConnectTimeout = 5;
-
             return conBuilder.ConnectionString;
         }
-
         private void generatePricelist()
         {
             List<int> ID = new List<int>();
