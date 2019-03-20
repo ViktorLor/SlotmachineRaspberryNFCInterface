@@ -42,5 +42,14 @@ Global
 		{179BF664-79E9-4273-B6EB-B3DA8A1CA5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{179BF664-79E9-4273-B6EB-B3DA8A1CA5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{179BF664-79E9-4273-B6EB-B3DA8A1CA5C5}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95BC135C-3452-4830-B2D5-189ECD364B58}
+=======
+>>>>>>> cccf93aea08fac80de349a936fabe8c42b94a2a7
 	EndGlobalSection
 EndGlobal

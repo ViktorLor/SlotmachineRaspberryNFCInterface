@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -103,9 +104,9 @@ namespace Prototype
 		public static string NFC_in()
 		{
 			string id = null;
-			//Process process1 = Process.Start("/bin/bash", "-c \"/home/pi/Client/a.out\"");
-			//process1.WaitForExit();
-			
+			Process process1 = Process.Start("/bin/bash", "-c \"/home/pi/Client/a.out\"");
+			process1.WaitForExit();
+
 			string text = File.ReadAllText(Program.filepath + "UID.txt", Encoding.UTF8);
 			string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
 			id = lines[0];
@@ -127,9 +128,9 @@ namespace Prototype
 				wait(10000);
 				int cnt;
 				int.TryParse(lbl_display_fullcnt.Text, out cnt);
-				//Protokoll.BookData(Protokoll.ipadress, Protokoll.port);
-				//if (File.Exists(Program.filepathSend + "cmdbook.txt"))
-				//	File.Delete(Program.filepathSend + "cmdbook.txt");
+				Protokoll.BookData();
+				if (File.Exists(Program.filepathSend + "cmdbook.txt"))
+					File.Delete(Program.filepathSend + "cmdbook.txt");
 				automat(cnt);
 
 				if (this.InvokeRequired)
