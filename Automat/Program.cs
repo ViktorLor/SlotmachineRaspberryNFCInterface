@@ -21,7 +21,7 @@ namespace Prototype
 		public static string filepathResponse = "/home/pi/Client/Files/Response/";
 		public static string filepathSource = "/home/pi/Client/Files/Source/";
 		public static string filepath = "/home/pi/Client/Files/";
-		public static int foreignsystem = 104;
+		public static int foreignsystem = 102;
 		[STAThread]
 		static void Main()
 		{

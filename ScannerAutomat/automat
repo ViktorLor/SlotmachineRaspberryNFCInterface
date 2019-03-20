@@ -33,6 +33,5 @@ exportPin $PIN
 setOutput $PIN
 
 changeState $PIN $ON
-#change to ms later
 sleep 0.1
 changeState $PIN $OFF

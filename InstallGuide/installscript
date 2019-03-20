@@ -4,7 +4,41 @@ sudo apt-get -y install mono-xsp4 sudo apt-get -y install subversion autoconf de
 
 #startscript
 sudo echo "@/bin/bash /home/pi/startscript" >> /etc/xdg/lxsession/LXDE-pi/autostart
-echo "mono ~/ClientVertrag/Vertrag.exe" >> ~/startscript
+
+cat <<EOT >> ~/startscript
+mono ~/ClientVertrag/Vertrag.exe
+# Common path for all GPIO access
+BASE_GPIO_PATH=/sys/class/gpio
+PIN="20"
+# Assign names to states
+ON="1"
+OFF="0"
+
+# Utility function to export a pin if not already exported
+exportPin()
+{
+  if [ ! -e $BASE_GPIO_PATH/gpio$1 ]; then
+    echo "$1" > $BASE_GPIO_PATH/export
+  fi
+}
+
+# Utility function to set a pin as an output
+setOutput()
+{
+  echo out > $BASE_GPIO_PATH/gpio$1/direction
+}
+
+# Utility function to change state
+changeState()
+{
+  echo $2 > $BASE_GPIO_PATH/gpio$1/value
+}
+exportPin $PIN
+setOutput $PIN
+
+changeState $PIN $ON
+EOT
+
 
 #nfclib
 wget https://github.com/nfc-tools/libnfc/releases/download/libnfc-1.7.0-rc7/libnfc-1.7.0-rc7.tar.gz
