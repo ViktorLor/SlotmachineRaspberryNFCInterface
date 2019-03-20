@@ -1,8 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
-MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugProtokoll", "DebugProtokoll\DebugProtokoll.csproj", "{2E6B5EA8-A954-4A4E-9322-D161863B2A30}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspiBigGui", "RaspiBigGui\RaspiBigGui.csproj", "{01A9FADA-63E8-4C7A-9462-6B6F9B3E82EF}"
@@ -45,17 +42,5 @@ Global
 		{179BF664-79E9-4273-B6EB-B3DA8A1CA5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{179BF664-79E9-4273-B6EB-B3DA8A1CA5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{179BF664-79E9-4273-B6EB-B3DA8A1CA5C5}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
-<<<<<<< HEAD
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {95BC135C-3452-4830-B2D5-189ECD364B58}
-=======
->>>>>>> d90eae5d5123d86da392635457d48fc8127b51b4
-=======
->>>>>>> d90eae5d5123d86da392635457d48fc8127b51b4
 	EndGlobalSection
 EndGlobal
