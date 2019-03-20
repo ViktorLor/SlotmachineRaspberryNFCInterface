@@ -129,7 +129,7 @@ namespace Automat_GUI
 			text = text.Replace("%uid%", Program.UID);
 			File.WriteAllText(targetFile, text);
 
-			//Protokoll.getNameData();
+			Protokoll.getNameData();
 		}
 	}
 }
