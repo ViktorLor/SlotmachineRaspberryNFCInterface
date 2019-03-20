@@ -19,7 +19,7 @@ namespace Prototype
 
         private void Form2_Load(object sender, EventArgs e)
         {
-			btn_oke.Text = "best‰tigen";
+			btn_oke.Text = "best√§tigen";
 			lbl_age.Text = Program.name + " " + Program.surname + " ist zu jung!";
             //doesnt load probably
             /*this.TopMost = true;

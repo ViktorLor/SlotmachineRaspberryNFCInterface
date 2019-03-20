@@ -32,5 +32,5 @@ changeState()
 exportPin 40
 setOutput 40
 
-changeState 40 1
+changeState 40 ON
 sleep 3
