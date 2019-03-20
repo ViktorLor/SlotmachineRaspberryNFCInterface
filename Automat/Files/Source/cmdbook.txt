@@ -1,0 +1,18 @@
+<CMD_BOOK>
+    <UID>%uid%</UID>
+    <TRANS_ID>fixed</TRANS_ID>
+    <FOREIGNSYSTEM>100</FOREIGNSYSTEM>
+    <PAYMENTLINKCODE>C</PAYMENTLINKCODE>
+    <TOTAL>0</TOTAL>
+    <POSITIONS>
+        <POSITION>
+            <NR>%nr%</NR>
+            <NAME>0</NAME>
+            <COUNT>%cnt%</COUNT>
+            <PRICE>0</PRICE>
+            <TOTAL>0</TOTAL>
+            <TAX>0</TAX>
+            <IS_TIP>0</IS_TIP>
+        </POSITION>
+    </POSITIONS>
+</CMD_BOOK>
