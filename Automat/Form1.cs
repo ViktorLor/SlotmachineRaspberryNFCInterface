@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Diagnostics;
+
 
 namespace Prototype
 {
@@ -158,8 +160,8 @@ namespace Prototype
 		{
 			for (int i = 0; i < num; i++)
 			{
-				//script
-				wait(100);
+				Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/automat\"");
+				process1.WaitForExit();
 			}
 		}
 

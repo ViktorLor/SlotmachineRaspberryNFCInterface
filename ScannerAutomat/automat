@@ -3,7 +3,7 @@
 # Common path for all GPIO access
 BASE_GPIO_PATH=/sys/class/gpio
 
-
+PIN="21"
 # Assign names to states
 ON="1"
 OFF="0"
@@ -19,7 +19,7 @@ exportPin()
 # Utility function to set a pin as an output
 setOutput()
 {
-  echo "out" > $BASE_GPIO_PATH/gpio$1/direction
+  echo out > $BASE_GPIO_PATH/gpio$1/direction
 }
 
 # Utility function to change state
@@ -29,8 +29,10 @@ changeState()
 }
 
 
-exportPin 40
-setOutput 40
+exportPin $PIN
+setOutput $PIN
 
-changeState 40 ON
-sleep 3
+changeState $PIN $ON
+#change to ms later
+sleep 0.1
+changeState $PIN $OFF
