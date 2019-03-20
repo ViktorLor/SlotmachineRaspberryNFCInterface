@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace Automat_GUI
+namespace Prototype
 {
 	public partial class Form2 : Form
 	{

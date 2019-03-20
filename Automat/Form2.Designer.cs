@@ -1,4 +1,4 @@
-﻿namespace Automat_GUI
+﻿namespace Prototype
 {
 	partial class Form2
 	{
