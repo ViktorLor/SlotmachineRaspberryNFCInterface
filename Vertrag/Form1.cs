@@ -114,21 +114,28 @@ namespace Prototype
                 if (lbl_confirm.InvokeRequired)
                     lbl_confirm.Invoke(new MethodInvoker(delegate
                     {
+						BackColor = Color.Green;
                         lbl_confirm.Text = Program.name + " " + Program.surname + " hat Haftungsausschuss für " +
                                            product + " abgeschlossen";
                     }));
                 else
                 {
-                    lbl_confirm.Text = Program.name + " " + Program.surname + " hat Haftungsausschuss für " + product +
+					BackColor = Color.Green;
+					lbl_confirm.Text = Program.name + " " + Program.surname + " hat Haftungsausschuss für " + product +
                                        " abgeschlossen";
                 }
                 
                 Thread.Sleep(2000);
                 if (lbl_confirm.InvokeRequired)
-                    lbl_confirm.Invoke(new MethodInvoker(delegate { lbl_confirm.Text = ""; }));
+                    lbl_confirm.Invoke(new MethodInvoker(delegate 
+					{
+						BackColor = Color.White;
+						lbl_confirm.Text = "";
+					}));
                 else
                 {
-                    lbl_confirm.Text = "";
+					BackColor = Color.White;
+					lbl_confirm.Text = "";
                 }
 
             }
