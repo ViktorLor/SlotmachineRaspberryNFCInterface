@@ -35,7 +35,6 @@ namespace Prototype
             byte[] ba = Encoding.UTF8.GetBytes(data);
             byte[] bstart = BitConverter.GetBytes(Convert.ToInt16(ba.Length));
             byte eot = 0x04;
-
             //Adjust Bytes to Protocoll
             for (int i = 0; i < bstart.Length; i++) //message length
             {
@@ -54,7 +53,6 @@ namespace Prototype
         {
             TcpClient tcpclnt = new TcpClient();
             tcpclnt.Connect(ipadress, port);
-
             Stream nwstream = tcpclnt.GetStream();
             SendBytes(xmldata, nwstream);
             StreamReader nwreader = new StreamReader(nwstream, Encoding.UTF8);

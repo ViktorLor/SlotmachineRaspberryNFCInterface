@@ -1,44 +1,13 @@
 #!/bin/bash
 sudo apt-get update
-sudo apt-get -y install mono-xsp4 sudo apt-get -y install subversion autoconf debhelper flex libusb-dev libpcsclite-dev libpcsclite1 libccid pcscd pcsc-tools libpcsc-perl libusb-1.0-0-dev libtool libssl-dev cmake checkinstall
+sudo apt-get -y install mono-xsp4 subversion autoconf debhelper flex libusb-dev libpcsclite-dev libpcsclite1
+libccid pcscd pcsc-tools libpcsc-perl libusb-1.0-0-dev libtool libssl-dev cmake checkinstall
 
 #startscript
 sudo echo "@/bin/bash /home/pi/startscript" >> /etc/xdg/lxsession/LXDE-pi/autostart
 
-cat <<EOT >> ~/startscript
-mono ~/ClientVertrag/Vertrag.exe
-# Common path for all GPIO access
-BASE_GPIO_PATH=/sys/class/gpio
-PIN="20"
-# Assign names to states
-ON="1"
-OFF="0"
-
-# Utility function to export a pin if not already exported
-exportPin()
-{
-  if [ ! -e $BASE_GPIO_PATH/gpio$1 ]; then
-    echo "$1" > $BASE_GPIO_PATH/export
-  fi
-}
-
-# Utility function to set a pin as an output
-setOutput()
-{
-  echo out > $BASE_GPIO_PATH/gpio$1/direction
-}
-
-# Utility function to change state
-changeState()
-{
-  echo $2 > $BASE_GPIO_PATH/gpio$1/value
-}
-exportPin $PIN
-setOutput $PIN
-
-changeState $PIN $ON
-EOT
-
+cp startscript ~/
+cp automat ~/Client/
 
 #nfclib
 wget https://github.com/nfc-tools/libnfc/releases/download/libnfc-1.7.0-rc7/libnfc-1.7.0-rc7.tar.gz
@@ -51,9 +20,5 @@ sudo sh -c "echo /usr/local/lib > /etc/ld.so.conf.d/usr-local-lib.conf"
 sudo ldconfig
 cd ~
 gcc -o Scanner.out scanner.c -lnfc
-mv Scanner.out ~/ClientVertrag
-cd ~
+mv Scanner.out ~/Client/
 
- #
- gcc -o automat.out automat1.c
- 

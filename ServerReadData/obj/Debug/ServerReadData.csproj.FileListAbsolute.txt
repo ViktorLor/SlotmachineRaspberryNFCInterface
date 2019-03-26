@@ -11,3 +11,4 @@ C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/obj
 C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.exe
 C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.pdb
 /home/vik/RiderProjects/DiplomClienten/ServerReadData/bin/Debug/ServerReadData.exe.config
+/home/vik/RiderProjects/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.csprojAssemblyReference.cache

@@ -15,27 +15,9 @@ namespace GetArticleList
 
         public void getDatafromServer()
         {
-            string query;
-            DateTime today = DateTime.Today;
-
-            switch (today.DayOfWeek)
-            {
-                case DayOfWeek.Thursday:
-                    query = "SELECT * from vi_UDS_ArticleList_1 where Pricelistindex = 1"; //Mens Day
-                    break;
-                case DayOfWeek.Friday:
-                    query = "SELECT * from vi_UDS_ArticleList_1 where Pricelistindex = 2"; //Flate Rate
-                    break;
-                case DayOfWeek.Tuesday:
-                    query = "SELECT * from vi_UDS_ArticleList_1 where Pricelistindex = 3"; //Ladies Day   
-                    break;
-                default:
-                    query = "SELECT * from vi_UDS_ArticleList_1 where Pricelistindex = 4"; //Normal Day
-                    break;
-            }
-
+            string sqlrequest = getSqlRequest();
             using (var conn = new SqlConnection(GetConnectionString()))
-            using (var sqlcommand = new SqlCommand(query, conn))
+            using (var sqlcommand = new SqlCommand(sqlrequest, conn))
             {
                 try
                 {
@@ -63,17 +45,35 @@ namespace GetArticleList
 
             generatePricelist();
         }
+        
+        private string getSqlRequest()
+        {
+            DateTime today = DateTime.Today;
 
+            switch (today.DayOfWeek)
+            {
+                case DayOfWeek.Thursday:
+                    return "SELECT * from vi_UDS_ArticleList_1 where Pricelistindex = 1"; //Mens Day
+                case DayOfWeek.Friday:
+                    return "SELECT * from vi_UDS_ArticleList_1 where Pricelistindex = 2"; //Flate Rate
+                case DayOfWeek.Tuesday:
+                    return "SELECT * from vi_UDS_ArticleList_1 where Pricelistindex = 3"; //Ladies Day   
+                default:
+                    return "SELECT * from vi_UDS_ArticleList_1 where Pricelistindex = 4"; //Normal Day
+            }
+        }
+        
         private string GetConnectionString()
         {
             var conBuilder = new SqlConnectionStringBuilder();
-            conBuilder.DataSource = "192.168.0.95\\Accessengine"; //192.168.0.95
+            conBuilder.DataSource = "192.168.0.95\\Accessengine"; 
             conBuilder.InitialCatalog = "Access";
             conBuilder.UserID = "Statistic";
             conBuilder.Password = "WgdBz0n!";
             conBuilder.ConnectTimeout = 5;
             return conBuilder.ConnectionString;
         }
+        
         private void generatePricelist()
         {
             List<int> ID = new List<int>();

@@ -1,9 +1,8 @@
-#!/bin/bash
-
+mono ~/Client/GUI.exe
+mono ~/ServerReadData.exe
 # Common path for all GPIO access
 BASE_GPIO_PATH=/sys/class/gpio
-
-PIN="21"
+PIN="20"
 # Assign names to states
 ON="1"
 OFF="0"
@@ -27,11 +26,7 @@ changeState()
 {
   echo $2 > $BASE_GPIO_PATH/gpio$1/value
 }
-
-
 exportPin $PIN
 setOutput $PIN
 
 changeState $PIN $ON
-sleep 0.1
-changeState $PIN $OFF

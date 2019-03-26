@@ -15,7 +15,7 @@ namespace Prototype
 {
     public partial class Form1 : Form
     {
-        string product_id = null;
+        private string product_id = Program.paintball;
 		static int age_requirement = 18;
         string product = null;
 
