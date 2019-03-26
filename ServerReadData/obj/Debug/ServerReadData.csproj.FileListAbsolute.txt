@@ -3,12 +3,15 @@
 /home/vik/RiderProjects/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.csproj.CoreCompileInputs.cache
 /home/vik/RiderProjects/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.exe
 /home/vik/RiderProjects/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.pdb
-C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/bin/Debug/ServerReadData.exe.config
-C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/bin/Debug/ServerReadData.exe
-C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/bin/Debug/ServerReadData.pdb
-C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.csprojResolveAssemblyReference.cache
-C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.csproj.CoreCompileInputs.cache
-C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.exe
-C:/Users/alexa/Documents/GitHub/DiplomClienten/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.pdb
 /home/vik/RiderProjects/DiplomClienten/ServerReadData/bin/Debug/ServerReadData.exe.config
+<<<<<<< HEAD
 /home/vik/RiderProjects/DiplomClienten/ServerReadData/obj/Debug/ServerReadData.csprojAssemblyReference.cache
+=======
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\ServerReadData\bin\Debug\ServerReadData.exe.config
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\ServerReadData\bin\Debug\ServerReadData.exe
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\ServerReadData\bin\Debug\ServerReadData.pdb
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\ServerReadData\obj\Debug\ServerReadData.csprojResolveAssemblyReference.cache
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\ServerReadData\obj\Debug\ServerReadData.csproj.CoreCompileInputs.cache
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\ServerReadData\obj\Debug\ServerReadData.exe
+C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\ServerReadData\obj\Debug\ServerReadData.pdb
+>>>>>>> 44cb694fdd1ef77b711cfbf5aaa2ad3369ae9e77
