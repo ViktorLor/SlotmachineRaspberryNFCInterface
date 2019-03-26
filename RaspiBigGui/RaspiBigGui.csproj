@@ -64,13 +64,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="a.out" />
+    <Content Include="Files\pricelist.txt" />
+    <Content Include="Files\Products.txt" />
     <Content Include="Files\Response\responsecmdbook.txt" />
     <Content Include="Files\Response\responsegetname.txt" />
     <Content Include="Files\Response\responsesaldo.txt" />
+    <Content Include="Files\SoldProducts.config" />
     <Content Include="Files\Source\cmdbook.txt" />
     <Content Include="Files\Source\getname.txt" />
     <Content Include="Files\Source\saldo.txt" />
-    <Content Include="Files\Productlist.txt" />
     <Content Include="Files\UID.txt" />
     <Content Include="Form1.resx" />
     <Content Include="Form2.resx" />
