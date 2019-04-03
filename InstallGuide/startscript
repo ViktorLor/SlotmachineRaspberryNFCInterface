@@ -1,5 +1,5 @@
 mono ~/Client/GUI.exe
-mono ~/ServerReadData.exe
+#mono ~/ServerReadData.exe
 # Common path for all GPIO access
 BASE_GPIO_PATH=/sys/class/gpio
 PIN="20"

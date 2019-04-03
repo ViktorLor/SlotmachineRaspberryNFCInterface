@@ -36,7 +36,7 @@ namespace Prototype
             byte[] bstart = BitConverter.GetBytes(Convert.ToInt16(ba.Length));
             byte eot = 0x04;
             //Adjust Bytes to Protocoll
-            for (int i = 0; i < bstart.Length; i++) //message length
+        for (int i = 0; i < bstart.Length; i++) //message length
             {
                 nwstream.WriteByte(bstart[i]);
             }

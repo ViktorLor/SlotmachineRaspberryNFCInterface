@@ -16,7 +16,7 @@ namespace GetArticleList
         public void getDatafromServer()
         {
             string sqlrequest = getSqlRequest();
-            using (var conn = new SqlConnection(GetConnectionString()))
+            using (var conn = new SqlConnection(getConnectionString()))
             using (var sqlcommand = new SqlCommand(sqlrequest, conn))
             {
                 try
@@ -63,14 +63,14 @@ namespace GetArticleList
             }
         }
         
-        private string GetConnectionString()
+        private string getConnectionString()
         {
             var conBuilder = new SqlConnectionStringBuilder();
             conBuilder.DataSource = "192.168.0.95\\Accessengine"; 
             conBuilder.InitialCatalog = "Access";
             conBuilder.UserID = "Statistic";
             conBuilder.Password = "WgdBz0n!";
-            conBuilder.ConnectTimeout = 5;
+            conBuilder.ConnectTimeout = 10;
             return conBuilder.ConnectionString;
         }
         
@@ -109,7 +109,7 @@ namespace GetArticleList
 
     public class Article
     {
-        public decimal ArticleID;
+        public int ArticleID;
         public string Name;
         public decimal Price;
     }
