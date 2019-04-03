@@ -1,4 +1,5 @@
-#Alle diese Zeilen müssen einzelnd ausgeführt werden.
+#Alle diese Zeilen müssen einzelnd ausgeführt werden. Bevor dieser Code ausgeführt wird, muss der
+ #Ordner InstallGuide in ~/ kopiert werden
 sudo apt-get update
 sudo apt-get -y install mono-xsp4 subversion autoconf debhelper flex libusb-dev libpcsclite-dev libpcsclite1 libccid pcscd pcsc-tools libpcsc-perl libusb-1.0-0-dev libtool libssl-dev cmake checkinstall
 
@@ -27,3 +28,4 @@ git clone https://github.com/goodtft/LCD-show.git
 chmod -R 755 LCD-show
 cd LCD-show/
 sudo ./LCD35-show
+
