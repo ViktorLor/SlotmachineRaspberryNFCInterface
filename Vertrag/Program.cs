@@ -21,7 +21,7 @@ namespace Prototype
 		public static string filepathResponse = "/home/pi/Clientvertrag/Files/Response/";
 		public static string filepathSource = "/home/pi/Clientvertrag/Files/Source/";
 		public static string filepath = "/home/pi/Clientvertrag/Files/";
-		public static int foreignsystem = 101;
+		public static int foreignsystem = 104;
 		/// <summary>
 		/// Der Haupteinstiegspunkt für die Anwendung.
 		/// </summary>
