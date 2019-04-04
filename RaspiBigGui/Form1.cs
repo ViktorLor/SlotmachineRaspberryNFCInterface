@@ -17,6 +17,7 @@ namespace Prototype
 		public static string productID;
 
 		protected List<Product> productList = new List<Product>();        //liste zur anzeige der produkte
+		protected string UID = Program.UID;
 		protected double price, fullprice;
 		protected int age_rating;
 
@@ -209,7 +210,7 @@ namespace Prototype
 			string targetFile = System.IO.Path.Combine(targetPath, fileName);                       //ziel pfad erstellen
 
 			string text = File.ReadAllText(sourceFile);                                             //template file einlesen
-			text = text.Replace("%uid%", Program.UID);                                                      //daten eintragen
+			text = text.Replace("%uid%", UID);                                                      //daten eintragen
 			for (int i = 0; i < productList.Count; i++)
 			{
 				if (lb_productList.GetItemChecked(i))
