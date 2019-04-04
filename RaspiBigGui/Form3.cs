@@ -25,7 +25,7 @@ namespace Prototype
         {
 			this.Activated += AfterLoading;
 			this.TopMost = true;
-            //this.FormBorderStyle = FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
         }
 

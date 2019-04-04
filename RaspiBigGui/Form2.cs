@@ -26,7 +26,7 @@ namespace Prototype
         {
 			this.Activated += AfterLoading;
 			this.TopMost = true;
-            //this.FormBorderStyle = FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
 		}
 
@@ -68,8 +68,8 @@ namespace Prototype
         {
             string id = "s000000000000123";
 			
-            Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
-            process1.WaitForExit();
+            //Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
+            //process1.WaitForExit();
 
             string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
             id = lines[0];
