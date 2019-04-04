@@ -39,8 +39,8 @@ namespace Prototype
 			lbl_displayFullPrice.Text = lbl_displayPrice.Text;
 			btn_confirm.Enabled = false;
 
-			string text = File.ReadAllText(Program.filepath + "Productlist.txt", Encoding.UTF8);          //einlesen der datenbank(produktliste
-			string[] lines = File.ReadAllLines(Program.filepath + "Productlist.txt", Encoding.UTF8);      //trennen in die einzelnen zeilen
+			string text = File.ReadAllText(Program.filepath + "Products.txt", Encoding.UTF8);          //einlesen der datenbank(produktliste
+			string[] lines = File.ReadAllLines(Program.filepath + "Products.txt", Encoding.UTF8);      //trennen in die einzelnen zeilen
 			foreach (string line in lines)
 			{
 				string[] atributes = line.Split('/');			//jede zeile in die einzelnen bestandteile zerlegen (produktID/name/preis)  "/" als trennzeichen

@@ -8,8 +8,9 @@ namespace Prototype
 
         static void Main()
         {
+
+            Protokoll.SaldoData();
             
-            Protokoll.BookData();
 
         }
     }

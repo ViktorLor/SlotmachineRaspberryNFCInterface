@@ -39,10 +39,10 @@ namespace Prototype
 			while (Program.UID == null)
 			{
 				this.Show();
-
+				Program.UID = null;
 				Program.UID = NFC_in();
 
-				if (Program.UID != null /*&& age >= 16 /*&& contract == true*/) //auf ID, altersbeschränkung und haftschutzvertrag prüfen
+				if (Program.UID != null ||Program.UID != "s000000000000" /*&& age >= 16 /*&& contract == true*/) //auf ID, altersbeschränkung und haftschutzvertrag prüfen
 				{
 					getnameHelper();
 					Program.name = readName();
@@ -70,7 +70,7 @@ namespace Prototype
 		public static string NFC_in()           //funktion zum auslesen der NFC-armbänder
 		{
 			string id = "null";
-			Process process1 = Process.Start("/bin/bash", "-c \"/home/pi/Client/a.out\"");
+			Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
 			process1.WaitForExit();
 			string text = File.ReadAllText(Program.filepath + "UID.txt", Encoding.UTF8);
 			string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);

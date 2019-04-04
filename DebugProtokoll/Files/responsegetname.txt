@@ -1,17 +1,13 @@
-�<CMD_GET_CARDINFO_RESULT>
-  <NAME1>wieser</NAME1>
-  <NAME2>christoph</NAME2>
-  <ADDRESS>4997</ADDRESS>
-  <EMAIL>cwgd@gmx.at</EMAIL>
-  <BIRTHDATE>2001-02-15</BIRTHDATE>
+><CMD_GET_CARDINFO_RESULT>
+  <NAME1>Mustermann</NAME1>
+  <NAME2>Max</NAME2>
+  <ADDRESS>1</ADDRESS>
+  <EMAIL>abc@xy.com</EMAIL>
+  <BIRTHDATE>2001-01-24</BIRTHDATE>
   <NOTES>
     <NOTE>
-      <TITLE>AGB</TITLE>
-      <CONTENT>Die allgemeinen Geschäftsbedingungen wurden akzeptiert.</CONTENT>
-    </NOTE>
-    <NOTE>
-      <TITLE>Daten Verarbeitung</TITLE>
-      <CONTENT>Ich erlaube die Verarbeitung personenbezogener Daten.</CONTENT>
+      <TITLE>Title 1</TITLE>
+      <CONTENT>Dies ist eine Notiz</CONTENT>
     </NOTE>
   </NOTES>
 </CMD_GET_CARDINFO_RESULT>

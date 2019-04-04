@@ -9,7 +9,7 @@ namespace Prototype
 {
     public class Protokoll
     {
-        private static string ipadress = "192.168.0.95"; //192.168.0.95
+        private static string ipadress = "192.168.0.16"; //192.168.0.95
         private static int port = 8001; //8001
 
         private static string XmltoString(XmlDocument doc)
@@ -36,7 +36,7 @@ namespace Prototype
             byte[] bstart = BitConverter.GetBytes(Convert.ToInt16(ba.Length));
             byte eot = 0x04;
             //Adjust Bytes to Protocoll
-            for (int i = 0; i < bstart.Length; i++) //message length
+        for (int i = 0; i < bstart.Length; i++) //message length
             {
                 nwstream.WriteByte(bstart[i]);
             }
@@ -100,7 +100,7 @@ namespace Prototype
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(Program.filepathSend + "saldo.txt");
-            XmlNode nod2 = doc.SelectSingleNode("CMD_GET_CARDINFO/FOREIGNSYSTEM");
+            XmlNode nod2 = doc.SelectSingleNode("CMD_SALDO/FOREIGNSYSTEM");
             nod2.FirstChild.Value = Program.foreignsystem.ToString();
             string xmldata = XmltoString(doc);
             string response = sendtoServer(xmldata);
