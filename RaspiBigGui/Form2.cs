@@ -14,184 +14,198 @@ using System.Windows.Forms.VisualStyles;
 
 namespace Prototype
 {
-	
-	public partial class Form2 : Form
-	{
-		public Form2()
-		{
-			InitializeComponent();
-			lbl_information.Font = new Font("Microsoft Sans Serif", 28, FontStyle.Bold);
-		}
-
-		
-		private void Form2_Load(object sender, EventArgs e)
-		{
-			this.TopMost = true;
-			this.FormBorderStyle = FormBorderStyle.None;
-			this.WindowState = FormWindowState.Maximized;
-			this.Activated += AfterLoading;
-		}
-
-		private void AfterLoading(object sender, EventArgs e)
-		{
-			Application.DoEvents();							//initialisieren
-			this.Activated -= AfterLoading;
-			while (Program.UID == null)
-			{
-				this.Show();
-				Program.UID = null;
-				Program.UID = NFC_in();
-
-				if (Program.UID != null ||Program.UID != "s000000000000" /*&& age >= 16 /*&& contract == true*/) //auf ID, altersbeschränkung und haftschutzvertrag prüfen
-				{
-					getnameHelper();
-					Program.name = readName();
-					Program.surname = readSurname();
-					Program.age = readAge();
-					Program.saldo = readSaldo();
-					Program.limit = readLimit();
-					//read security contract
-					if (File.Exists(Program.filepathResponse + "responsegetname.txt"))
-						File.Delete(Program.filepathResponse + "responsegetname.txt");
-
-					Form1 frm = new Form1(); //öffnen des nächsten fensters
-					frm.Location = this.Location;
-					frm.StartPosition = FormStartPosition.Manual;
-					frm.ShowDialog();
-					this.Hide();
-					this.Show();
-				}
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+            lbl_information.Font = new Font("Microsoft Sans Serif", 28, FontStyle.Bold);
+        }
 
 
-				Program.UID = null; //ID für neuen kunden zurücksetzten
-			}
-		}
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            this.Activated += AfterLoading;
+        }
 
-		public static string NFC_in()           //funktion zum auslesen der NFC-armbänder
-		{
-			string id = "null";
-			Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
-			process1.WaitForExit();
-			string text = File.ReadAllText(Program.filepath + "UID.txt", Encoding.UTF8);
-			string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
-			id = lines[0];
+        private void AfterLoading(object sender, EventArgs e)
+        {
+            Application.DoEvents(); //initialisieren
+            this.Activated -= AfterLoading;
+            while (Program.UID == null)
+            {
+                this.Show();
+                Program.UID = NFC_in();
 
-			return id;
-		}
+                getnameHelper();
+                Program.name = readName();
+                Program.surname = readSurname();
+                Program.age = readAge();
+                Program.saldo = readSaldo();
+                Program.limit = readLimit();
+                //read security contract
+                if (File.Exists(Program.filepathResponse + "responsegetname.txt"))
+                    File.Delete(Program.filepathResponse + "responsegetname.txt");
 
-		private string readName()
-		{
-			string name = "";
-			string text = File.ReadAllText(Program.filepathResponse + "responsegetname.txt", Encoding.UTF8);           //einlesen der datenbank(produktliste
-			string[] lines = File.ReadAllLines(Program.filepathResponse + "responsegetname.txt", Encoding.UTF8);       //trennen in die einzelnen zeilen
-			string[] help_1 = lines[2].Split('>');      //information in festgelegter zeile
-			string help_2 = help_1[1];
-			foreach (char c in help_2)                  //elemente durchgehen bis das nächste beginnt
-			{
-				if (c != '<')
-					name += c;
-				else
-					break;
-			}
-			return name;
-		}
+                Form1 frm = new Form1(); //öffnen des nächsten fensters
+                frm.Location = this.Location;
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.ShowDialog();
+                this.Hide();
+                this.Show();
+            }
+        }
 
-		private string readSurname()
-		{
-			string surname = "";
-			string text = File.ReadAllText(Program.filepathResponse + "responsegetname.txt", Encoding.UTF8);           //einlesen der datenbank(produktliste
-			string[] lines = File.ReadAllLines(Program.filepathResponse + "responsegetname.txt", Encoding.UTF8);       //trennen in die einzelnen zeilen
-			string[] help_1 = lines[1].Split('>');      //information in festgelegter zeile
-			string help_2 = help_1[1];
-			foreach (char c in help_2)                  //elemente durchgehen bis das nächste beginnt
-			{
-				if (c != '<')
-					surname += c;
-				else
-					break;
-			}
-			return surname;
-		}
+        public static string NFC_in() //funktion zum auslesen der NFC-armbänder
+        {
+            string id = "s000000000000";
 
-		private int readAge()
-		{
-			int age = 0;
-			string d = "";
-			string t;
-			double h;
-			DateTime date;
-			DateTime today;
-			TimeSpan diff;
+            while (id == "s000000000000")
+            {
+                Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
+                process1.WaitForExit();
 
-			t = DateTime.Today.ToString("yyyy-MM-dd");      //heutiges datum abfragen
+                string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
+                id = lines[0];
+                Program.UID = id;
+            }
 
-			string text = File.ReadAllText(Program.filepathResponse + "responsegetname.txt", Encoding.UTF8);           //einlesen der datenbank(produktliste
-			string[] lines = File.ReadAllLines(Program.filepathResponse + "responsegetname.txt", Encoding.UTF8);
-			string[] help_1 = lines[5].Split('>');          //information in festgelegter zeile
-			string help_2 = help_1[1];
-			foreach (char c in help_2)                      //elemente durchgehen bis das nächste beginnt
-			{
-				if (c != '<')
-					d += c;
-				else
-					break;
-			}
+            return id;
+        }
 
-			date = DateTime.Parse(d);
-			today = DateTime.Parse(t);
-			diff = today - date;				//alter in tage berechnen
-			h = diff.TotalDays / 365.25;
-			age = (int)h;						//alter in jahren zurückgeben
-			return age;
-		}
+        private string readName()
+        {
+            string name = "";
+            string text =
+                File.ReadAllText(Program.filepathResponse + "responsegetname.txt",
+                    Encoding.UTF8); //einlesen der datenbank(produktliste
+            string[] lines =
+                File.ReadAllLines(Program.filepathResponse + "responsegetname.txt",
+                    Encoding.UTF8); //trennen in die einzelnen zeilen
+            string[] help_1 = lines[2].Split('>'); //information in festgelegter zeile
+            string help_2 = help_1[1];
+            foreach (char c in help_2) //elemente durchgehen bis das nächste beginnt
+            {
+                if (c != '<')
+                    name += c;
+                else
+                    break;
+            }
 
-		private double readSaldo()
-		{
-			string fileName = "saldo.txt";
+            return name;
+        }
 
-			string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);
-			string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
+        private string readSurname()
+        {
+            string surname = "";
+            string text =
+                File.ReadAllText(Program.filepathResponse + "responsegetname.txt",
+                    Encoding.UTF8); //einlesen der datenbank(produktliste
+            string[] lines =
+                File.ReadAllLines(Program.filepathResponse + "responsegetname.txt",
+                    Encoding.UTF8); //trennen in die einzelnen zeilen
+            string[] help_1 = lines[1].Split('>'); //information in festgelegter zeile
+            string help_2 = help_1[1];
+            foreach (char c in help_2) //elemente durchgehen bis das nächste beginnt
+            {
+                if (c != '<')
+                    surname += c;
+                else
+                    break;
+            }
 
-			string text = File.ReadAllText(sourceFile, Encoding.UTF8);
-			text = text.Replace("%uid%", Program.UID);
-			File.WriteAllText(targetFile, text);
-			Protokoll.SaldoData();
-			
-			double s = 0;
-			string[] lines = File.ReadAllLines(Program.filepathResponse + "responsesaldo.txt", Encoding.UTF8);       //trennen in die einzelnen zeilen
-			string[] help_1 = lines[3].Split('>');
-			string[] help_2 = help_1[1].Split('<');
+            return surname;
+        }
 
-			double.TryParse(help_2[0], out s);
+        private int readAge()
+        {
+            int age = 0;
+            string d = "";
+            string t;
+            double h;
+            DateTime date;
+            DateTime today;
+            TimeSpan diff;
 
-			return s/100;	//Anzeigefehler . und ,
-		}
+            t = DateTime.Today.ToString("yyyy-MM-dd"); //heutiges datum abfragen
 
-		private double readLimit()
-		{
-			double l = 0;
-			string text = File.ReadAllText(Program.filepathResponse + "responsesaldo.txt", Encoding.UTF8);           //einlesen der datenbank(produktliste
-			string[] lines = File.ReadAllLines(Program.filepathResponse + "responsesaldo.txt", Encoding.UTF8);       //trennen in die einzelnen zeilen
-			string[] help_1 = lines[4].Split('>');
-			string[] help_2 = help_1[1].Split('<');
+            string text =
+                File.ReadAllText(Program.filepathResponse + "responsegetname.txt",
+                    Encoding.UTF8); //einlesen der datenbank(produktliste
+            string[] lines = File.ReadAllLines(Program.filepathResponse + "responsegetname.txt", Encoding.UTF8);
+            string[] help_1 = lines[5].Split('>'); //information in festgelegter zeile
+            string help_2 = help_1[1];
+            foreach (char c in help_2) //elemente durchgehen bis das nächste beginnt
+            {
+                if (c != '<')
+                    d += c;
+                else
+                    break;
+            }
 
-			double.TryParse(help_2[0], out l);
-			return l/100;
-		}
+            date = DateTime.Parse(d);
+            today = DateTime.Parse(t);
+            diff = today - date; //alter in tage berechnen
+            h = diff.TotalDays / 365.25;
+            age = (int) h; //alter in jahren zurückgeben
+            return age;
+        }
 
-		private void getnameHelper()
-		{
-		string fileName = "getname.txt";
+        private double readSaldo()
+        {
+            string fileName = "saldo.txt";
 
-		string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);
-		string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
+            string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);
+            string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
 
-		string text = File.ReadAllText(sourceFile);
-		text = text.Replace("%uid%", Program.UID);
-		File.WriteAllText(targetFile, text);
+            string text = File.ReadAllText(sourceFile, Encoding.UTF8);
+            text = text.Replace("%uid%", Program.UID);
+            File.WriteAllText(targetFile, text);
+            Protokoll.SaldoData();
 
-		Protokoll.getNameData();
-		}
-	}
+            double s = 0;
+            string[] lines =
+                File.ReadAllLines(Program.filepathResponse + "responsesaldo.txt",
+                    Encoding.UTF8); //trennen in die einzelnen zeilen
+            string[] help_1 = lines[3].Split('>');
+            string[] help_2 = help_1[1].Split('<');
+
+            double.TryParse(help_2[0], out s);
+
+            return s / 100; //Anzeigefehler . und ,
+        }
+
+        private double readLimit()
+        {
+            double l = 0;
+            string text =
+                File.ReadAllText(Program.filepathResponse + "responsesaldo.txt",
+                    Encoding.UTF8); //einlesen der datenbank(produktliste
+            string[] lines =
+                File.ReadAllLines(Program.filepathResponse + "responsesaldo.txt",
+                    Encoding.UTF8); //trennen in die einzelnen zeilen
+            string[] help_1 = lines[4].Split('>');
+            string[] help_2 = help_1[1].Split('<');
+
+            double.TryParse(help_2[0], out l);
+            return l / 100;
+        }
+
+        private void getnameHelper()
+        {
+            string fileName = "getname.txt";
+
+            string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);
+            string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
+
+            string text = File.ReadAllText(sourceFile);
+            text = text.Replace("%uid%", Program.UID);
+            File.WriteAllText(targetFile, text);
+
+            Protokoll.getNameData();
+        }
+    }
 }
-
