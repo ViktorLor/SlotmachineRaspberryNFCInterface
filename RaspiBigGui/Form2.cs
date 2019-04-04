@@ -24,62 +24,61 @@ namespace Prototype
 
         private void Form2_Load(object sender, EventArgs e)
         {
-			this.Activated += AfterLoading;
-			this.TopMost = true;
+            this.Activated += AfterLoading;
+            this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-		}
+        }
 
         private void AfterLoading(object sender, EventArgs e)
         {
-			Application.DoEvents(); //initialisieren
+            Application.DoEvents(); //initialisieren
             this.Activated -= AfterLoading;
-			while (Program.UID == null)
-			{
-				Program.UID = null;
-				this.Show();
-				lbl_information.Text = "Bitte NFC-Scan durchführen";
-				while (Program.UID == null)
-				{
-					Program.UID = NFC_in();
-				}
+            while (Program.UID == null)
+            {
+                Program.UID = null;
+                this.Show();
+                lbl_information.Text = "Bitte NFC-Scan durchführen";
+                while (Program.UID == null)
+                {
+                    Program.UID = NFC_in();
+                }
 
-				if (Program.UID != null)				//doesnt work without it
-				{
-					getnameHelper();
-					Program.name = readName();
-					Program.surname = readSurname();
-					Program.age = readAge();
-					Program.saldo = readSaldo();
-					Program.limit = readLimit();
 
-					Form1 frm = new Form1(); //öffnen des nächsten fensters
-					frm.Location = this.Location;
-					frm.StartPosition = FormStartPosition.Manual;
-					frm.ShowDialog();
-					this.Hide();
-					this.Show();
-				}
-				Program.UID = null;
-			}
+                getnameHelper();
+                Program.name = readName();
+                Program.surname = readSurname();
+                Program.age = readAge();
+                Program.saldo = readSaldo();
+                Program.limit = readLimit();
+
+                Form1 frm = new Form1(); //öffnen des nächsten fensters
+                frm.Location = this.Location;
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.ShowDialog();
+                this.Hide();
+                this.Show();
+
+                Program.UID = null;
+            }
         }
 
         public static string NFC_in() //funktion zum auslesen der NFC-armbänder
         {
             string id = "s000000000000123";
-			
-            //Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
-            //process1.WaitForExit();
+
+            Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
+            process1.WaitForExit();
 
             string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
             id = lines[0];
 
-			Form3.wait(500);
+            Form3.wait(500);
 
-			if (id != "s000000000000")
-				return id;
-			else
-				return null;
+            if (id != "s000000000000")
+                return id;
+            else
+                return null;
         }
 
         private string readName()
@@ -204,7 +203,7 @@ namespace Prototype
         {
             string fileName = "getname.txt";
 
-			string sourceFile = Program.filepathSource + fileName;
+            string sourceFile = Program.filepathSource + fileName;
             string targetFile = Program.filepathSend + fileName;
 
             string text = File.ReadAllText(sourceFile);
