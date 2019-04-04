@@ -9,8 +9,8 @@ namespace Prototype
 {
     public class Protokoll
     {
-        private static string ipadress = "172.16.160.66"; //192.168.0.95
-        private static int port = 8002; //8001
+        private static string ipadress = "192.168.0.95"; //192.168.0.95
+        private static int port = 8001; //8001
 
         private static string XmltoString(XmlDocument doc)
         {
