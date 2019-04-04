@@ -65,7 +65,9 @@ namespace Prototype
         public static string NFC_in() //funktion zum auslesen der NFC-armbänder
         {
             string id = "s000000000000";
-            
+
+			Console.WriteLine("Scan");
+
             Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
             process1.WaitForExit();
 
