@@ -20,13 +20,10 @@ namespace Prototype
         {
             InitializeComponent();
             lbl_information.Font = new Font("Microsoft Sans Serif", 28, FontStyle.Bold);
-			Console.WriteLine("Initialize");
         }
-
 
         private void Form2_Load(object sender, EventArgs e)
         {
-			Console.WriteLine("form_load");
 			this.Activated += AfterLoading;
 			this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -35,7 +32,6 @@ namespace Prototype
 
         private void AfterLoading(object sender, EventArgs e)
         {
-			Console.WriteLine("Afterloading");
             Application.DoEvents(); //initialisieren
             this.Activated -= AfterLoading;
 			while (Program.UID == null)
@@ -46,7 +42,9 @@ namespace Prototype
 				while (Program.UID == null)
 				{
 					Program.UID = NFC_in();
-					Console.WriteLine("scan fertig");				}
+				}
+				if (File.Exists(Program.filepath + "UID.txt"))
+					File.Delete(Program.filepath + "UID.txt");
 
 				getnameHelper();
 				Program.name = readName();
@@ -61,17 +59,13 @@ namespace Prototype
 				frm.ShowDialog();
 				this.Hide();
 				this.Show();
-
-				Program.UID = null;
 			}
         }
 
         public static string NFC_in() //funktion zum auslesen der NFC-armbänder
         {
-            string id = "s000000000000";
-
-			Console.WriteLine("Scan");
-
+            string id = null;
+			
             Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
             process1.WaitForExit();
 
