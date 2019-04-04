@@ -33,16 +33,18 @@ namespace Prototype
 
         private void AfterLoading(object sender, EventArgs e)
         {
+			Console.WriteLine("Afterloading");
             Application.DoEvents(); //initialisieren
             this.Activated -= AfterLoading;
 			while (Program.UID == null)
 			{
+				Program.UID = null;
 				this.Show();
 				lbl_information.Text = "Bitte NFC-Scan durchführen";
 				while (Program.UID == null)
 				{
 					Program.UID = NFC_in();
-				}
+					Console.WriteLine("scan fertig");				}
 
 				getnameHelper();
 				Program.name = readName();
