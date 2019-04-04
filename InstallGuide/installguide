@@ -20,7 +20,6 @@ make
 sudo make install
 sudo sh -c "echo /usr/local/lib > /etc/ld.so.conf.d/usr-local-lib.conf"
 sudo ldconfig
-cd ~
 gcc -o Scanner.out scanner.c -lnfc
 mv Scanner.out ~/Client/
 # LCD Display
