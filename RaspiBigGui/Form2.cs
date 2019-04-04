@@ -20,11 +20,13 @@ namespace Prototype
         {
             InitializeComponent();
             lbl_information.Font = new Font("Microsoft Sans Serif", 28, FontStyle.Bold);
+			Console.WriteLine("Initialize");
         }
 
 
         private void Form2_Load(object sender, EventArgs e)
         {
+			Console.WriteLine("form_load");
 			this.Activated += AfterLoading;
 			this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
