@@ -26,7 +26,7 @@ namespace Prototype
         {
 			this.Activated += AfterLoading;
 			this.TopMost = true;
-            this.FormBorderStyle = FormBorderStyle.None;
+            //this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
 		}
 
@@ -44,19 +44,23 @@ namespace Prototype
 					Program.UID = NFC_in();
 				}
 
-				getnameHelper();
-				Program.name = readName();
-				Program.surname = readSurname();
-				Program.age = readAge();
-				Program.saldo = readSaldo();
-				Program.limit = readLimit();
+				if (Program.UID != null)				//doesnt work without it
+				{
+					getnameHelper();
+					Program.name = readName();
+					Program.surname = readSurname();
+					Program.age = readAge();
+					Program.saldo = readSaldo();
+					Program.limit = readLimit();
 
-				Form1 frm = new Form1(); //öffnen des nächsten fensters
-				frm.Location = this.Location;
-				frm.StartPosition = FormStartPosition.Manual;
-				frm.ShowDialog();
-				this.Hide();
-				this.Show();
+					Form1 frm = new Form1(); //öffnen des nächsten fensters
+					frm.Location = this.Location;
+					frm.StartPosition = FormStartPosition.Manual;
+					frm.ShowDialog();
+					this.Hide();
+					this.Show();
+				}
+				Program.UID = null;
 			}
         }
 
@@ -70,10 +74,12 @@ namespace Prototype
             string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
             id = lines[0];
 
-			if (id == "s000000000000")
-				return null;
-			else
+			Form3.wait(500);
+
+			if (id != "s000000000000")
 				return id;
+			else
+				return null;
         }
 
         private string readName()
