@@ -35,20 +35,20 @@ namespace Prototype
         {
             Application.DoEvents(); //initialisieren
             this.Activated -= AfterLoading;
-            while (Program.UID == null)
-            {
-                this.Show();
-                Program.UID = NFC_in();
-
-                getnameHelper();
-                Program.name = readName();
-                Program.surname = readSurname();
-                Program.age = readAge();
-                Program.saldo = readSaldo();
-                Program.limit = readLimit();
-                //read security contract
-                if (File.Exists(Program.filepathResponse + "responsegetname.txt"))
-                    File.Delete(Program.filepathResponse + "responsegetname.txt");
+			while (Program.UID == null)
+			{
+				this.Show();
+				Program.UID = NFC_in();
+			}
+			
+			getnameHelper();
+            Program.name = readName();
+            Program.surname = readSurname();
+            Program.age = readAge();
+            Program.saldo = readSaldo();
+            Program.limit = readLimit();
+            if (File.Exists(Program.filepathResponse + "responsegetname.txt"))
+                File.Delete(Program.filepathResponse + "responsegetname.txt");
 
                 Form1 frm = new Form1(); //öffnen des nächsten fensters
                 frm.Location = this.Location;
@@ -56,7 +56,7 @@ namespace Prototype
                 frm.ShowDialog();
                 this.Hide();
                 this.Show();
-            }
+            
         }
 
         public static string NFC_in() //funktion zum auslesen der NFC-armbänder
@@ -69,8 +69,7 @@ namespace Prototype
                 process1.WaitForExit();
 
                 string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
-                id = lines[0];
-                Program.UID = id;
+                id += lines[0];
             }
 
             return id;
