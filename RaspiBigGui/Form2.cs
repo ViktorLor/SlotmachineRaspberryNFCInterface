@@ -63,16 +63,17 @@ namespace Prototype
         {
             string id = "s000000000000";
 
-            while (id == "s000000000000")
-            {
-                Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
-                process1.WaitForExit();
+            
+            Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
+            process1.WaitForExit();
 
-                string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
-                id += lines[0];
-            }
+            string[] lines = File.ReadAllLines(Program.filepath + "UID.txt", Encoding.UTF8);
+            id += lines[0];
 
-            return id;
+			if (id == "s000000000000")
+				return null;
+			else
+				return id;
         }
 
         private string readName()
