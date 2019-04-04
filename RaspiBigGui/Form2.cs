@@ -50,8 +50,6 @@ namespace Prototype
 				Program.age = readAge();
 				Program.saldo = readSaldo();
 				Program.limit = readLimit();
-				if (File.Exists(Program.filepathResponse + "responsegetname.txt"))
-					File.Delete(Program.filepathResponse + "responsegetname.txt");
 
 				Form1 frm = new Form1(); //öffnen des nächsten fensters
 				frm.Location = this.Location;
