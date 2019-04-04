@@ -19,7 +19,6 @@ namespace Prototype
 		protected List<Product> productList = new List<Product>();        //liste zur anzeige der produkte
 		protected string UID = Program.UID;
 		protected double price, fullprice;
-		protected int age_rating;
 
 		public Form1()
 		{
@@ -50,10 +49,8 @@ namespace Prototype
 				p.name = atributes[1];
 				double.TryParse(atributes[2], out p.price);             //den produktpreis aus der datenbank in einen double wert parsen
 				p.price = p.price / 100; 
-				int.TryParse(atributes[3],  out age_rating);
-				if (age_rating > Program.age) { }				//auf mindestalter prüfen
-				else
-					productList.Add(p);							//produkte zur liste hinzufügen
+		
+				productList.Add(p);							//produkte zur liste hinzufügen
 			}
 
 			lb_productList.Items.AddRange(productList.ToArray());			//produktliste wird in der listbox angezeigt
