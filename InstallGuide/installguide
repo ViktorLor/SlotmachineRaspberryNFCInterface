@@ -1,13 +1,13 @@
 #Alle diese Zeilen müssen einzelnd ausgeführt werden. Bevor dieser Code ausgeführt wird, muss der
- #Ordner InstallGuide in ~/ kopiert werden
+ #Ordner InstallGuide in ~/ kopiert werden Passwörter sind raspberry oder paintball
 sudo apt-get update
 sudo apt-get -y install mono-xsp4 subversion autoconf debhelper flex libusb-dev libpcsclite-dev libpcsclite1 libccid pcscd pcsc-tools libpcsc-perl libusb-1.0-0-dev libtool libssl-dev cmake checkinstall
 
 #startscript
-# Mit nano ~/.config/lxsession/LXDE-pi/autostart am Ende "@/bin/bash /home/pi/startscript" einfügen.
+# Mit nano ~/.config/lxsession/LXDE-pi/autostart am Ende "@/bin/bash /home/pi/startscript" einfügen. Falls es diese Ornder nicht gibt, müssen sie erstellt werden.
 
 #Falls der Preis aktualisiert werden soll, muss #mono ~/ServerReadData.exe in startscript auskommentiert werden 
-#und ServerReadData.exe in ~/ eingefügt werden.
+#und ServerReadData.exe in ~/ eingefügt werden. 
 cp startscript ~/
 cp automat ~/Client/
 

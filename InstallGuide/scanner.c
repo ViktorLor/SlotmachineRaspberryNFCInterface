@@ -61,7 +61,7 @@ int main(int argc, const char *argv[]) {
     char str[] = "s000000000000";   //UID = 20 bestehend aus s + 12 Nullern + NFC-Code
     FILE *fp;
     //change to Client or ClientVertrag
-    fp = fopen("/home/pi/ClientVertrag/Files/UID.txt", "w"); //w=Creates an empty file, and erases content if exists
+    fp = fopen("/home/pi/Client/Files/UID.txt", "w"); //w=Creates an empty file, and erases content if exists
 
     if (nfc_initiator_select_passive_target(pnd, nmMifare, NULL, 0, &nt) > 0) {
     fwrite(str, 1, sizeof(str) - 1, fp);
