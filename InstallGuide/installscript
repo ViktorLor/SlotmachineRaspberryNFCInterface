@@ -1,12 +1,11 @@
 #!/bin/bash
 sudo apt-get update
-sudo apt-get -y install mono-xsp4 subversion autoconf debhelper flex libusb-dev libpcsclite-dev libpcsclite1
-libccid pcscd pcsc-tools libpcsc-perl libusb-1.0-0-dev libtool libssl-dev cmake checkinstall
+sudo apt-get -y install mono-xsp4 subversion autoconf debhelper flex libusb-dev libpcsclite-dev libpcsclite1 libccid pcscd pcsc-tools libpcsc-perl libusb-1.0-0-dev libtool libssl-dev cmake checkinstall
 
 #startscript
-sudo echo "@/bin/bash /home/pi/startscript" >> /etc/xdg/lxsession/LXDE-pi/autostart
+# Mit z.B. nano in "/etc/xdg/lxsession/LXDE-pi/autostart"
+# "@/bin/bash /home/pi/startscript" am Ende einfügen
 
-cp startscript ~/
 cp automat ~/Client/
 
 #nfclib
@@ -21,4 +20,3 @@ sudo ldconfig
 cd ~
 gcc -o Scanner.out scanner.c -lnfc
 mv Scanner.out ~/Client/
-
