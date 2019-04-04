@@ -28,11 +28,11 @@ namespace Prototype
 			this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-        }
+		}
 
         private void AfterLoading(object sender, EventArgs e)
         {
-            Application.DoEvents(); //initialisieren
+			Application.DoEvents(); //initialisieren
             this.Activated -= AfterLoading;
 			while (Program.UID == null)
 			{
@@ -43,8 +43,6 @@ namespace Prototype
 				{
 					Program.UID = NFC_in();
 				}
-				if (File.Exists(Program.filepath + "UID.txt"))
-					File.Delete(Program.filepath + "UID.txt");
 
 				getnameHelper();
 				Program.name = readName();
@@ -64,7 +62,7 @@ namespace Prototype
 
         public static string NFC_in() //funktion zum auslesen der NFC-armbänder
         {
-            string id = null;
+            string id = "s000000000000123";
 			
             Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
             process1.WaitForExit();
@@ -200,8 +198,8 @@ namespace Prototype
         {
             string fileName = "getname.txt";
 
-            string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);
-            string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
+			string sourceFile = Program.filepathSource + fileName;
+            string targetFile = Program.filepathSend + fileName;
 
             string text = File.ReadAllText(sourceFile);
             text = text.Replace("%uid%", Program.UID);

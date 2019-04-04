@@ -14,7 +14,11 @@ namespace Prototype
 	    public static string filepathResponse = "/home/pi/Client/Files/Response/";
 	    public static string filepathSource = "/home/pi/Client/Files/Source/";
         public static string filepath = "/home/pi/Client/Files/";
-        public static int foreignsystem = 104;
+		//public static string filepathSend = @"C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\RaspiBigGui\Files\SendData\";          //Changed filestructure
+		//public static string filepathResponse = @"C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\RaspiBigGui\Files\Response\";
+		//public static string filepathSource = @"C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\RaspiBigGui\Files\Source\";
+		//public static string filepath = @"C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\RaspiBigGui\Files\";
+		public static int foreignsystem = 104;
 		public static string UID = null;
 		public static string name = null;
 		public static string surname = null;
@@ -31,7 +35,6 @@ namespace Prototype
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form2());
-		    
         }
 		
 

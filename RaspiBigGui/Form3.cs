@@ -23,10 +23,10 @@ namespace Prototype
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            this.TopMost = true;
+			this.Activated += AfterLoading;
+			this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
-            this.Activated += AfterLoading;
         }
 
         private void AfterLoading(object sender, EventArgs e)
