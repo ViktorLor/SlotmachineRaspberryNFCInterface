@@ -48,7 +48,7 @@ namespace Prototype
 				p.id = atributes[0];                                    //atribute der einzelnen produkte aus der datenbank in die eigene liste einfügen
 				p.name = atributes[1];
 				double.TryParse(atributes[2], out p.price);             //den produktpreis aus der datenbank in einen double wert parsen
-				p.price = p.price / 100; 
+				p.price = p.price; 
 		
 				productList.Add(p);							//produkte zur liste hinzufügen
 			}

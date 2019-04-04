@@ -181,7 +181,7 @@ namespace Prototype
 
             double.TryParse(help_2[0], out s);
 
-            return s / 100; //Anzeigefehler . und ,
+            return s; //Anzeigefehler . und ,
         }
 
         private double readLimit()
@@ -197,7 +197,7 @@ namespace Prototype
             string[] help_2 = help_1[1].Split('<');
 
             double.TryParse(help_2[0], out l);
-            return l / 100;
+            return l;
         }
 
         private void getnameHelper()
