@@ -127,7 +127,7 @@ namespace Prototype
 				wait(10000);
 				int cnt;
 				int.TryParse(lbl_display_fullcnt.Text, out cnt);
-				Protokoll.BookData();
+				Protokoll.BookData();	//300001/Boxautomat/0.50
 				if (File.Exists(Program.filepathSend + "cmdbook.txt"))
 					File.Delete(Program.filepathSend + "cmdbook.txt");
 				automat(cnt);

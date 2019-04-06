@@ -4,13 +4,14 @@ sudo apt-get update
 sudo apt-get -y install mono-xsp4 subversion autoconf debhelper flex libusb-dev libpcsclite-dev libpcsclite1 libccid pcscd pcsc-tools libpcsc-perl libusb-1.0-0-dev libtool libssl-dev cmake checkinstall
 
 #startscript
-# Mit nano ~/.config/lxsession/LXDE-pi/autostart am Ende "@/bin/bash /home/pi/startscript" einfügen. Falls es diese Ornder nicht gibt, müssen sie erstellt werden.
+# Mit nano ~/.config/lxsession/LXDE-pi/autostart am Ende "@/bin/bash /home/pi/startscript" einfügen. Falls es diese Ornder nicht gibt muss der Text anstatt in 
+#/etc/xdg/lxsession/LXDE-pi/autostart  eingefügt werden
 
 #Falls der Preis aktualisiert werden soll, muss #mono ~/ServerReadData.exe in startscript auskommentiert werden 
 #und ServerReadData.exe in ~/ eingefügt werden. 
-cp startscript ~/
-cp automat ~/Client/
-
+mv startscript ~/
+mv automat ~/Client/
+cd ..
 #nfclib
 wget https://github.com/nfc-tools/libnfc/releases/download/libnfc-1.7.0-rc7/libnfc-1.7.0-rc7.tar.gz
 tar -xvzf libnfc-1.7.0-rc7.tar.gz
@@ -20,8 +21,10 @@ make
 sudo make install
 sudo sh -c "echo /usr/local/lib > /etc/ld.so.conf.d/usr-local-lib.conf"
 sudo ldconfig
+cd ~/InstallGuide
 gcc -o Scanner.out scanner.c -lnfc
 mv Scanner.out ~/Client/
+cd ~
 # LCD Display
 git clone https://github.com/goodtft/LCD-show.git
 chmod -R 755 LCD-show
