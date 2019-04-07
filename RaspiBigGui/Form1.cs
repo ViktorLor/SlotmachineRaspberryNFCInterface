@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,16 +43,16 @@ namespace Prototype
 			string[] lines = File.ReadAllLines(Program.filepath + "Products.txt", Encoding.UTF8);      //trennen in die einzelnen zeilen
 			foreach (string line in lines)
 			{
-				string[] atributes = line.Split('/');			//jede zeile in die einzelnen bestandteile zerlegen (produktID/name/preis)  "/" als trennzeichen
+				string[] atributes = line.Split('/');           //jede zeile in die einzelnen bestandteile zerlegen (produktID/name/preis)  "/" als trennzeichen
 				Product p = new Product();
 				p.id = atributes[0];                                    //atribute der einzelnen produkte aus der datenbank in die eigene liste einfügen
 				p.name = atributes[1];
 				double.TryParse(atributes[2], out p.price);             //den produktpreis aus der datenbank in einen double wert parsen
-		
-				productList.Add(p);							//produkte zur liste hinzufügen
+
+				productList.Add(p);                         //produkte zur liste hinzufügen
 			}
 
-			lb_productList.Items.AddRange(productList.ToArray());			//produktliste wird in der listbox angezeigt
+			lb_productList.Items.AddRange(productList.ToArray());           //produktliste wird in der listbox angezeigt
 
 			lb_productList.SetSelected(0, true);
 
@@ -103,7 +103,7 @@ namespace Prototype
 			int i;
 			int.TryParse(lbl_displayCount.Text, out i);             //den eingestellten zählerwert in einen integer wert parsen
 			double.TryParse(lbl_displayPrice.Text, out price);      //den produktpreis in einen double wert parsen
-			//price = price / 100;
+																	//price = price / 100;
 			i++;
 			fullprice = i * price;
 			if (fullprice + Program.saldo > Program.limit)
@@ -149,14 +149,14 @@ namespace Prototype
 
 		private void lb_productList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			for (int i = 0; i < productList.Count; i++)								//nur ein produkt gleichzeitig auswählbar
+			for (int i = 0; i < productList.Count; i++)                             //nur ein produkt gleichzeitig auswählbar
 			{
 				if (lb_productList.GetItemChecked(i))
 				{
 					lb_productList.SetItemChecked(i, false);
 				}
 			}
-			try					//falls index = -1 (wenn ins leere gedrückt wird)
+			try                 //falls index = -1 (wenn ins leere gedrückt wird)
 			{
 				lb_productList.SetItemChecked(lb_productList.SelectedIndex, true);
 				btn_confirm.Enabled = true;
@@ -199,10 +199,10 @@ namespace Prototype
 
 		private void writeData()
 		{
-			string fileName = "cmdbook.txt";							//template filename
-			string targetPath = Program.filepathSend;					//ziel pfad
+			string fileName = "cmdbook.txt";                            //template filename
+			string targetPath = Program.filepathSend;                   //ziel pfad
 
-			string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);					//pfad zum template file erstellen
+			string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);                   //pfad zum template file erstellen
 			string targetFile = System.IO.Path.Combine(targetPath, fileName);                       //ziel pfad erstellen
 
 			string text = File.ReadAllText(sourceFile);                                             //template file einlesen

@@ -1,4 +1,4 @@
-namespace Prototype
+﻿namespace Prototype
 {
 	partial class Form1
 	{
