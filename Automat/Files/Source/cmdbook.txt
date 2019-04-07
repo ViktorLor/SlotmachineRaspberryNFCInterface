@@ -6,7 +6,7 @@
     <TOTAL>0</TOTAL>
     <POSITIONS>
         <POSITION>
-            <NR>%nr%</NR>
+            <NR>300001</NR>
             <NAME>0</NAME>
             <COUNT>%cnt%</COUNT>
             <PRICE>0</PRICE>

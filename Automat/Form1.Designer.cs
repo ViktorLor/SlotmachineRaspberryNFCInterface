@@ -56,9 +56,9 @@
 			this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_name.Location = new System.Drawing.Point(12, 9);
 			this.lbl_name.Name = "lbl_name";
-			this.lbl_name.Size = new System.Drawing.Size(193, 31);
+			this.lbl_name.Size = new System.Drawing.Size(168, 31);
 			this.lbl_name.TabIndex = 0;
-			this.lbl_name.Text = "Automatname";
+			this.lbl_name.Text = "Boxautomat";
 			// 
 			// lbl_gesamtanzahl
 			// 

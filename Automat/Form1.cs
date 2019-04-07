@@ -131,7 +131,7 @@ namespace Prototype
 				if (File.Exists(Program.filepathSend + "cmdbook.txt"))
 					File.Delete(Program.filepathSend + "cmdbook.txt");
 				automat(cnt);
-
+				writeData();
 				if (this.InvokeRequired)
 					this.Invoke(new MethodInvoker(delegate
 					{
@@ -181,6 +181,20 @@ namespace Prototype
 			{
 				Application.DoEvents();
 			}
+		}
+
+		public void writeData()
+		{
+			string fileName = "cmdbook.txt";                            //template filename
+			string targetPath = Program.filepathSend;                   //ziel pfad
+
+			string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);                   //pfad zum template file erstellen
+			string targetFile = System.IO.Path.Combine(targetPath, fileName);                       //ziel pfad erstellen
+
+			string text = File.ReadAllText(sourceFile);                                             //template file einlesen
+			text = text.Replace("%uid%", Program.UID);                                                      //daten eintragen
+			text = text.Replace("%cnt%", number.ToString());                                           //daten eintragen
+			File.WriteAllText(targetFile, text);
 		}
 	}
 }
