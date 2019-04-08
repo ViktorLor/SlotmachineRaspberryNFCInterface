@@ -20,9 +20,9 @@ namespace Prototype
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            /*this.TopMost = true;
+            this.TopMost = true;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;*/
+            this.WindowState = FormWindowState.Maximized;
             this.Activated += AfterLoading;
         }
 

@@ -32,9 +32,9 @@ namespace Prototype
 			lbl_saldo.Text = string.Format("{0:F2}", Program.saldo);
 			lbl_limit.Text = string.Format("{0:F2}", Program.limit);
 			
-			/*this.TopMost = true;
+			this.TopMost = true;
 			this.FormBorderStyle = FormBorderStyle.None;
-			this.WindowState = FormWindowState.Maximized;*/
+			this.WindowState = FormWindowState.Maximized;
 		}
 
 		private void btn_minus_Click(object sender, EventArgs e)
