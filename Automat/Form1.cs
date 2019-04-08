@@ -102,8 +102,9 @@ namespace Prototype
 
 		public static string NFC_in()
 		{
+			wait(10000);
 			string id = null;
-			Process process1 = Process.Start("/bin/bash", "-c \"/home/pi/Client/a.out\"");
+			Process process1 = Process.Start("/bin/bash", "-c \"/home/pi/Client/Scanner.out\"");
 			process1.WaitForExit();
 
 			string text = File.ReadAllText(Program.filepath + "UID.txt", Encoding.UTF8);
