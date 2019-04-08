@@ -102,7 +102,7 @@ namespace Prototype
 
 		public static string NFC_in()
 		{
-			wait(10000);
+			wait(5000);
 			string id = null;
 			Process process1 = Process.Start("/bin/bash", "-c \"/home/pi/Client/Scanner.out\"");
 			process1.WaitForExit();
