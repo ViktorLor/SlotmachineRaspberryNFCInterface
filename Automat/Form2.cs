@@ -96,26 +96,27 @@ namespace Prototype
 
         private double readSaldo()
         {
-            //vik
-            string fileName = "saldo.txt";
+			string fileName = "saldo.txt";
 
-            string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);
-            string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
+			string sourceFile = System.IO.Path.Combine(Program.filepathSource, fileName);
+			string targetFile = System.IO.Path.Combine(Program.filepathSend, fileName);
 
-            string text = File.ReadAllText(sourceFile, Encoding.UTF8);
-            text = text.Replace("%uid%", Program.UID);
-            File.WriteAllText(targetFile, text);
-            Protokoll.SaldoData();
-            //vik changes
-            double s = 0;
-            string[] lines = File.ReadAllLines(Program.filepathResponse + "responsesaldo.txt", Encoding.UTF8);
-            string[] help_1 = lines[3].Split('>');
-            string[] help_2 = help_1[1].Split('<');
+			string text = File.ReadAllText(sourceFile, Encoding.UTF8);
+			text = text.Replace("%uid%", Program.UID);
+			File.WriteAllText(targetFile, text);
+			Protokoll.SaldoData();
 
-            double.TryParse(help_2[0], out s);
+			double s = 0;
+			string[] lines =
+				File.ReadAllLines(Program.filepathResponse + "responsesaldo.txt",
+					Encoding.UTF8);
+			string[] help_1 = lines[3].Split('>');
+			string[] help_2 = help_1[1].Split('<');
 
-            return s / 100;
-        }
+			double.TryParse(help_2[0], out s);
+
+			return s;
+		}
 
         private double readLimit()
         {
