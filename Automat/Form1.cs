@@ -104,7 +104,7 @@ namespace Prototype
 		{
 			wait(5000);
 			string id = null;
-			Process process1 = Process.Start("/bin/bash", "-c \"/home/pi/Client/Scanner.out\"");
+			Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
 			process1.WaitForExit();
 
 			string text = File.ReadAllText(Program.filepath + "UID.txt", Encoding.UTF8);
