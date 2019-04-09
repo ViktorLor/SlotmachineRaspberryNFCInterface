@@ -131,7 +131,7 @@ namespace Prototype
 				else
 				{
 					process1.WaitForExit();
-					break;
+					closeWindow();
 				}
 			}
 			if (rescan == Program.UID)
@@ -144,27 +144,11 @@ namespace Prototype
 				if (File.Exists(Program.filepathSend + "cmdbook.txt"))
 					File.Delete(Program.filepathSend + "cmdbook.txt");
 				automat(cnt);
-				if (this.InvokeRequired)
-					this.Invoke(new MethodInvoker(delegate
-					{
-						this.Close();
-					}));
-				else
-				{
-					this.Close();
-				}
+				closeWindow();
 			}
 			else
 			{
-				if (this.InvokeRequired)
-					this.Invoke(new MethodInvoker(delegate
-					{
-						this.Close();
-					}));
-				else
-				{
-					this.Close();
-				}
+				closeWindow();
 			}
 		}
 
@@ -207,6 +191,19 @@ namespace Prototype
 			text = text.Replace("%uid%", Program.UID);                                                      //daten eintragen
 			text = text.Replace("%cnt%", number.ToString());                                           //daten eintragen
 			File.WriteAllText(targetFile, text);
+		}
+
+		public void closeWindow()
+		{
+			if (this.InvokeRequired)
+				this.Invoke(new MethodInvoker(delegate
+				{
+					this.Close();
+				}));
+			else
+			{
+				this.Close();
+			}
 		}
 	}
 }
