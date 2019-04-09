@@ -32,7 +32,6 @@ namespace Prototype
             this.Activated -= AfterLoading;
             while (Program.UID == null)
             {
-				this.Show();
 				this.TopMost = true;
 				this.FormBorderStyle = FormBorderStyle.None;
 				this.WindowState = FormWindowState.Maximized;
@@ -55,8 +54,6 @@ namespace Prototype
                 frm.ShowDialog();
                 this.Hide();
                 this.Show();
-
-				Form1.wait(1000);
 
                 Program.UID = null;
             }
