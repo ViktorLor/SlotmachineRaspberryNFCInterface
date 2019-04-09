@@ -8,7 +8,6 @@
 C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\DemoGui\bin\Debug\DemoGui.exe.config
 C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\DemoGui\bin\Debug\DemoGui.exe
 C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\DemoGui\bin\Debug\DemoGui.pdb
-C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\DemoGui\obj\Debug\DemoGui.csprojResolveAssemblyReference.cache
 C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\DemoGui\obj\Debug\DemoGui.csproj.CoreCompileInputs.cache
 C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\DemoGui\obj\Debug\DemoGui.exe
 C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\DemoGui\obj\Debug\DemoGui.pdb

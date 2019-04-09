@@ -8,18 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Threading;
 
 namespace Prototype
 {
     public partial class Form2 : Form
     {
-		public static Semaphore s;
-
 		public Form2()
         {
             InitializeComponent();
-			s = new Semaphore(0, 1);
 		}
 
         private void Form2_Load(object sender, EventArgs e)
@@ -35,30 +31,28 @@ namespace Prototype
             Application.DoEvents();
             this.Activated -= AfterLoading;
             while (Program.UID == null)
-            {
+			{
 				this.Show();
+				maxi();
 				while (Program.UID == null)
                 {
                     Program.UID = Form1.NFC_in();
                 }
-				s.Release();
 
                 getnameHelper();
-
                 Program.name = readName();
                 Program.surname = readSurname();
                 Program.saldo = readSaldo();
                 Program.limit = readLimit();
-
+				
                 Form1 frm = new Form1();
                 frm.Location = this.Location;
                 frm.StartPosition = FormStartPosition.Manual;
-                frm.ShowDialog();
+				mini();
+				frm.ShowDialog();
                 this.Hide();
                 this.Show();
-				Form1.wait(1000);
-				s.WaitOne();
-
+				
 				Program.UID = null;
             }
         }
@@ -148,5 +142,15 @@ namespace Prototype
 
             Protokoll.getNameData();
         }
+
+		public void maxi()
+		{
+			this.WindowState = FormWindowState.Maximized;
+		}
+
+		public void mini()
+		{
+			this.WindowState = FormWindowState.Normal;
+		}
     }
 }

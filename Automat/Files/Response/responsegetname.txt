@@ -1,17 +1,13 @@
-<CMD_GET_CARDINFO_RESULT>
-	<NAME1>Mustermann</NAME1>
-	<NAME2>Max</NAME2>
-	<ADDRESS>123456</ADDRESS>
-	<EMAIL>abc@xy.com</EMAIL>
-	<BIRTHDATE>2001-01-24</BIRTHDATE>
-	<NOTES>
-		<NOTE>
-			<TITLE>Note 1</TITLE>
-			<CONTENT>Dies ist die erste Notiz</CONTENT>
-		</NOTE>
-		<NOTE>
-			<TITLE>Note 2</TITLE>
-			<CONTENT>Dies ist die zweite Notiz</CONTENT>
-		</NOTE>
-	</NOTES>
-</CMD_GET_CARDINFO_RESULT>
+><CMD_GET_CARDINFO_RESULT>
+  <NAME1>Mustermann</NAME1>
+  <NAME2>Max</NAME2>
+  <ADDRESS>1</ADDRESS>
+  <EMAIL>abc@xy.com</EMAIL>
+  <BIRTHDATE>2001-01-24</BIRTHDATE>
+  <NOTES>
+    <NOTE>
+      <TITLE>Title 1</TITLE>
+      <CONTENT>Dies ist eine Notiz</CONTENT>
+    </NOTE>
+  </NOTES>
+</CMD_GET_CARDINFO_RESULT>

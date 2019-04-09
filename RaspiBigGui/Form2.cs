@@ -36,9 +36,7 @@ namespace Prototype
             this.Activated -= AfterLoading;
             while (Program.UID == null)
             {
-				this.TopMost = true;
-				this.FormBorderStyle = FormBorderStyle.None;
-				this.WindowState = FormWindowState.Maximized;
+				maxi();
 				Program.UID = null;
                 this.Show();
                 lbl_information.Text = "Bitte NFC-Scan durchführen";
@@ -46,7 +44,6 @@ namespace Prototype
                 {
                     Program.UID = NFC_in();
                 }
-
 
                 getnameHelper();
                 Program.name = readName();
@@ -58,6 +55,7 @@ namespace Prototype
                 Form1 frm = new Form1(); //öffnen des nächsten fensters
                 frm.Location = this.Location;
                 frm.StartPosition = FormStartPosition.Manual;
+				mini();
                 frm.ShowDialog();
                 this.Hide();
                 this.Show();
@@ -215,5 +213,15 @@ namespace Prototype
 
             Protokoll.getNameData();
         }
-    }
+
+		public void maxi()
+		{
+			this.WindowState = FormWindowState.Maximized;
+		}
+
+		public void mini()
+		{
+			this.WindowState = FormWindowState.Normal;
+		}
+	}
 }

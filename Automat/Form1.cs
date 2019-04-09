@@ -9,25 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Threading;
-
 
 namespace Prototype
 {
 	public partial class Form1 : Form
 	{
-		public static string rescan = null;
 		public static int number = 1;
-		public static bool cancel = false;
-		public static Process process1;
-		public static Thread scan;
 
 		public Form1()
 		{
 			InitializeComponent();
-			//Form2.s.Release();
-			scan = new Thread(scanner);
-			scan.Start();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -101,13 +92,25 @@ namespace Prototype
 
 		private void btn_cancel_Click(object sender, EventArgs e)
 		{
-			cancel = true;
+			this.Hide();
+			this.Close();
+		}
+
+		private void btn_confirm_Click(object sender, EventArgs e)
+		{
+			writeData();
+			Form3 frm = new Form3();
+			frm.Location = this.Location;
+			frm.StartPosition = FormStartPosition.Manual;
+			frm.ShowDialog();
+			this.Hide();
+			this.Close();
 		}
 
 		public static string NFC_in()
 		{
 			string id = null;
-			process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
+			Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
 			process1.WaitForExit();
 
 			string text = File.ReadAllText(Program.filepath + "UID.txt", Encoding.UTF8);
@@ -122,43 +125,7 @@ namespace Prototype
 				return null;
 		}
 
-		private void scanner()
-		{
-			cancel = false;
-			wait(1000);
-			rescan = null;
-			while (rescan == null)
-			{
-				if (!cancel)
-					rescan = NFC_in();
-				else
-				{
-					try
-					{
-						closeWindow();
-					}
-					catch { };
-				}
-			}
-			if (rescan == Program.UID)
-			{
-				//wait(10000);
-				int cnt;
-				int.TryParse(lbl_display_fullcnt.Text, out cnt);
-				writeData();
-				Protokoll.BookData();	//300001/Boxautomat/0.50
-				if (File.Exists(Program.filepathSend + "cmdbook.txt"))
-					File.Delete(Program.filepathSend + "cmdbook.txt");
-				automat(cnt);
-				closeWindow();
-			}
-			else
-			{
-				closeWindow();
-			}
-		}
-
-		private void automat(int num)
+		public static void automat(int num)
 		{
 			for (int i = 0; i < num; i++)
 			{
@@ -197,19 +164,6 @@ namespace Prototype
 			text = text.Replace("%uid%", Program.UID);                                                      //daten eintragen
 			text = text.Replace("%cnt%", number.ToString());                                           //daten eintragen
 			File.WriteAllText(targetFile, text);
-		}
-
-		public void closeWindow()
-		{
-			if (this.InvokeRequired)
-				this.Invoke(new MethodInvoker(delegate
-				{
-					this.Close();
-				}));
-			else
-			{
-				this.Close();
-			}
 		}
 	}
 }

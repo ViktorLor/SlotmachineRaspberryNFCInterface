@@ -39,7 +39,6 @@
 			this.lbl_price = new System.Windows.Forms.Label();
 			this.lbl_fullprice = new System.Windows.Forms.Label();
 			this.lbl_unit = new System.Windows.Forms.Label();
-			this.lbl_confirm = new System.Windows.Forms.Label();
 			this.btn_cancel = new System.Windows.Forms.Button();
 			this.lbl_user = new System.Windows.Forms.Label();
 			this.lbl_display_sal = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
 			this.lbl_limit = new System.Windows.Forms.Label();
 			this.lbl_unit1 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.btn_confirm = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lbl_name
@@ -168,22 +168,12 @@
 			this.lbl_unit.TabIndex = 10;
 			this.lbl_unit.Text = "€";
 			// 
-			// lbl_confirm
-			// 
-			this.lbl_confirm.AutoSize = true;
-			this.lbl_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_confirm.Location = new System.Drawing.Point(204, 252);
-			this.lbl_confirm.Name = "lbl_confirm";
-			this.lbl_confirm.Size = new System.Drawing.Size(198, 20);
-			this.lbl_confirm.TabIndex = 11;
-			this.lbl_confirm.Text = "Mit NFC-Scan bezahlen";
-			// 
 			// btn_cancel
 			// 
 			this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_cancel.Location = new System.Drawing.Point(12, 243);
 			this.btn_cancel.Name = "btn_cancel";
-			this.btn_cancel.Size = new System.Drawing.Size(129, 29);
+			this.btn_cancel.Size = new System.Drawing.Size(186, 29);
 			this.btn_cancel.TabIndex = 12;
 			this.btn_cancel.Text = "Abbruch";
 			this.btn_cancel.UseVisualStyleBackColor = true;
@@ -261,12 +251,24 @@
 			this.label1.TabIndex = 19;
 			this.label1.Text = "€";
 			// 
+			// btn_confirm
+			// 
+			this.btn_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_confirm.Location = new System.Drawing.Point(215, 243);
+			this.btn_confirm.Name = "btn_confirm";
+			this.btn_confirm.Size = new System.Drawing.Size(187, 29);
+			this.btn_confirm.TabIndex = 20;
+			this.btn_confirm.Text = "Bestätigen";
+			this.btn_confirm.UseVisualStyleBackColor = true;
+			this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(414, 281);
 			this.ControlBox = false;
+			this.Controls.Add(this.btn_confirm);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.lbl_unit1);
 			this.Controls.Add(this.lbl_limit);
@@ -275,7 +277,6 @@
 			this.Controls.Add(this.lbl_display_sal);
 			this.Controls.Add(this.lbl_user);
 			this.Controls.Add(this.btn_cancel);
-			this.Controls.Add(this.lbl_confirm);
 			this.Controls.Add(this.lbl_unit);
 			this.Controls.Add(this.lbl_fullprice);
 			this.Controls.Add(this.lbl_price);
@@ -311,7 +312,6 @@
 		private System.Windows.Forms.Label lbl_price;
 		private System.Windows.Forms.Label lbl_fullprice;
 		private System.Windows.Forms.Label lbl_unit;
-		private System.Windows.Forms.Label lbl_confirm;
 		private System.Windows.Forms.Button btn_cancel;
 		private System.Windows.Forms.Label lbl_user;
 		private System.Windows.Forms.Label lbl_display_sal;
@@ -320,6 +320,7 @@
 		private System.Windows.Forms.Label lbl_limit;
 		private System.Windows.Forms.Label lbl_unit1;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button btn_confirm;
 	}
 }
 
