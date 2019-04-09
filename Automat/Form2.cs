@@ -14,12 +14,13 @@ namespace Prototype
 {
     public partial class Form2 : Form
     {
-		public static Semaphore s;
+		//public static Semaphore s;
 
 		public Form2()
         {
             InitializeComponent();
-			s = new Semaphore(0, 1);
+			//s = new Semaphore(0, 1);
+			//Form1.scan.s
 		}
 
         private void Form2_Load(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace Prototype
                 frm.ShowDialog();
                 this.Hide();
                 this.Show();
-				s.WaitOne();
+				//s.WaitOne();
 
 				Program.UID = null;
             }
