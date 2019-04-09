@@ -19,6 +19,7 @@ namespace Prototype
 		public static string rescan = null;
 		public static int number = 1;
 		public static bool cancel = false;
+		public static Process process1;
 
 		public Form1()
 		{
@@ -98,6 +99,7 @@ namespace Prototype
 
 		private void btn_cancel_Click(object sender, EventArgs e)
 		{
+			process1.WaitForExit();
 			cancel = true;
 			this.Hide();
 			this.Close();
@@ -106,7 +108,7 @@ namespace Prototype
 		public static string NFC_in()
 		{
 			string id = null;
-			Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
+			process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
 			process1.WaitForExit();
 
 			string text = File.ReadAllText(Program.filepath + "UID.txt", Encoding.UTF8);
