@@ -56,6 +56,7 @@ namespace Prototype
                 frm.ShowDialog();
                 this.Hide();
                 this.Show();
+				Form1.wait(1000);
 				s.WaitOne();
 
 				Program.UID = null;
