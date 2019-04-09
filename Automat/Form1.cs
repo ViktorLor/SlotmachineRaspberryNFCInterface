@@ -27,6 +27,7 @@ namespace Prototype
 		{
 			InitializeComponent();
 			s = new Semaphore(0, 1);
+			s.Release();
 			scan = new Thread(scanner);
 			scan.Start();
 		}
