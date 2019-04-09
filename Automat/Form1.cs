@@ -20,11 +20,14 @@ namespace Prototype
 		public static int number = 1;
 		public static bool cancel = false;
 		public static Process process1;
+		public static Thread scan;
+		public static Semaphore s;
 
 		public Form1()
 		{
 			InitializeComponent();
-			Thread scan = new Thread(scanner);
+			s = new Semaphore(0, 1);
+			scan = new Thread(scanner);
 			scan.Start();
 		}
 
@@ -133,6 +136,7 @@ namespace Prototype
 				{
 					try
 					{
+						s.WaitOne();
 						closeWindow();
 					}
 					catch { };
