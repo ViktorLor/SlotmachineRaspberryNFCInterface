@@ -25,13 +25,13 @@ namespace Prototype
 		public Form1()
 		{
 			InitializeComponent();
+			Form2.s.Release();
 			scan = new Thread(scanner);
 			scan.Start();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			Form2.s.Release();
 			lbl_user.Text = Program.surname + " " + Program.name;
 			lbl_saldo.Text = string.Format("{0:F2}", Program.saldo);
 			lbl_limit.Text = string.Format("{0:F2}", Program.limit);
@@ -39,6 +39,7 @@ namespace Prototype
 			this.TopMost = true;
 			this.FormBorderStyle = FormBorderStyle.None;
 			this.WindowState = FormWindowState.Maximized;
+			Form2.s.Release();
 		}
 
 		private void btn_minus_Click(object sender, EventArgs e)

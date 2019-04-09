@@ -53,8 +53,8 @@ namespace Prototype
                 frm.Location = this.Location;
                 frm.StartPosition = FormStartPosition.Manual;
                 frm.ShowDialog();
-                //this.Hide();
-                //this.Show();
+                this.Hide();
+                this.Show();
 				s.WaitOne();
 
 				Program.UID = null;
