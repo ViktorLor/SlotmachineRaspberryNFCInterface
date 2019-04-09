@@ -122,7 +122,7 @@ namespace Prototype
 
 		private void scanner()
 		{
-			wait(3000);
+			wait(1000);
 			rescan = null;
 			while (rescan == null)
 			{
@@ -130,7 +130,11 @@ namespace Prototype
 					rescan = NFC_in();
 				else
 				{
-					closeWindow();
+					try
+					{
+						closeWindow();
+					}
+					catch { };
 				}
 			}
 			if (rescan == Program.UID)
