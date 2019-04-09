@@ -33,9 +33,6 @@ namespace Prototype
             while (Program.UID == null)
             {
 				this.Show();
-				this.TopMost = true;
-				this.FormBorderStyle = FormBorderStyle.None;
-				this.WindowState = FormWindowState.Maximized;
                 while (Program.UID == null)
                 {
                     Program.UID = Form1.NFC_in();
@@ -54,9 +51,6 @@ namespace Prototype
                 frm.ShowDialog();
                 this.Hide();
                 this.Show();
-				this.TopMost = true;
-				this.FormBorderStyle = FormBorderStyle.None;
-				this.WindowState = FormWindowState.Maximized;
 
 				Program.UID = null;
             }
