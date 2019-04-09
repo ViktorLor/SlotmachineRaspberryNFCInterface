@@ -31,6 +31,7 @@ namespace Prototype
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			Form2.s.Release();
 			lbl_user.Text = Program.surname + " " + Program.name;
 			lbl_saldo.Text = string.Format("{0:F2}", Program.saldo);
 			lbl_limit.Text = string.Format("{0:F2}", Program.limit);
