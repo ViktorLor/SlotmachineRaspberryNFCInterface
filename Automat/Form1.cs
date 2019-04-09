@@ -102,7 +102,6 @@ namespace Prototype
 
 		public static string NFC_in()
 		{
-			wait(5000);
 			string id = null;
 			Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/Scanner.out\"");
 			process1.WaitForExit();
@@ -113,12 +112,15 @@ namespace Prototype
 
 			//if (File.Exists(Program.filepath + "UID.txt"))
 			//	File.Delete(Program.filepath + "UID.txt");
-
-			return id;
+			if (id != "s000000000000")
+				return id;
+			else
+				return null;
 		}
 
 		private void scanner()
 		{
+			rescan = null;
 			while (rescan == null)
 			{
 				rescan = NFC_in();

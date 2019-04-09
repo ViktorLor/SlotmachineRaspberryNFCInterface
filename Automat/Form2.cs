@@ -32,7 +32,10 @@ namespace Prototype
             this.Activated -= AfterLoading;
             while (Program.UID == null)
             {
-                this.Show();
+				this.TopMost = true;
+				this.FormBorderStyle = FormBorderStyle.None;
+				this.WindowState = FormWindowState.Maximized;
+				this.Show();
                 lbl_nfc.Text = "Bitte NFC-Scan durchführen";
                 while (Program.UID == null)
                 {
