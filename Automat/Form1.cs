@@ -131,8 +131,17 @@ namespace Prototype
 				else
 				{
 					process1.WaitForExit();
-					this.Hide();
-					this.Close();
+					if (this.InvokeRequired)
+						this.Invoke(new MethodInvoker(delegate
+						{
+							this.Hide();
+							this.Close();
+						}));
+					else
+					{
+						this.Hide();
+						this.Close();
+					}
 				}
 			}
 			if (rescan == Program.UID)
