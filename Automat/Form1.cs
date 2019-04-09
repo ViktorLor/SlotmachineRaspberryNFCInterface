@@ -99,10 +99,7 @@ namespace Prototype
 
 		private void btn_cancel_Click(object sender, EventArgs e)
 		{
-			process1.WaitForExit();
 			cancel = true;
-			this.Hide();
-			this.Close();
 		}
 
 		public static string NFC_in()
@@ -132,7 +129,10 @@ namespace Prototype
 				if (!cancel)
 					rescan = NFC_in();
 				else
-					break;
+				{
+					this.Hide();
+					this.Close();
+				}
 			}
 			if (rescan == Program.UID)
 			{
