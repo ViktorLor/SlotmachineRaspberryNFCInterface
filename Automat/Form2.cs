@@ -56,6 +56,7 @@ namespace Prototype
                 this.Hide();
                 this.Show();
 
+				Form1.wait(1000);
 
                 Program.UID = null;
             }
