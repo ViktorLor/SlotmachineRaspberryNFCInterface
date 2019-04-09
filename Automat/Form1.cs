@@ -122,6 +122,7 @@ namespace Prototype
 
 		private void scanner()
 		{
+			cancel = false;
 			wait(1000);
 			rescan = null;
 			while (rescan == null)
