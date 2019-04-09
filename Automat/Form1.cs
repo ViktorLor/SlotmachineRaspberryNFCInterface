@@ -113,10 +113,7 @@ namespace Prototype
 
 			//if (File.Exists(Program.filepath + "UID.txt"))
 			//	File.Delete(Program.filepath + "UID.txt");
-			if (id != "s000000000000")
-				return id;
-			else
-				return null;
+			return id;
 		}
 
 		private void scanner()
