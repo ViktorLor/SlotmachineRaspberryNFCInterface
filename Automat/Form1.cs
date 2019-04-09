@@ -137,7 +137,6 @@ namespace Prototype
 				{
 					try
 					{
-						s.WaitOne();
 						closeWindow();
 					}
 					catch { };
@@ -207,10 +206,12 @@ namespace Prototype
 			if (this.InvokeRequired)
 				this.Invoke(new MethodInvoker(delegate
 				{
+					s.WaitOne();
 					this.Close();
 				}));
 			else
 			{
+				s.WaitOne();
 				this.Close();
 			}
 		}
