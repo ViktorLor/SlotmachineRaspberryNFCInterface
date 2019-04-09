@@ -136,7 +136,6 @@ namespace Prototype
 					try
 					{
 						closeWindow();
-						s.WaitOne();
 					}
 					catch { };
 				}
