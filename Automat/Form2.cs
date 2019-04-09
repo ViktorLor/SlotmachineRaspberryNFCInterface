@@ -35,7 +35,6 @@ namespace Prototype
 				this.TopMost = true;
 				this.FormBorderStyle = FormBorderStyle.None;
 				this.WindowState = FormWindowState.Maximized;
-				lbl_nfc.Text = "Bitte NFC-Scan durchführen";
                 while (Program.UID == null)
                 {
                     Program.UID = Form1.NFC_in();

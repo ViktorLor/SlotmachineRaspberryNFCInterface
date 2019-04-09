@@ -131,6 +131,7 @@ namespace Prototype
 					rescan = NFC_in();
 				else
 				{
+					this.DestroyHandle();
 					try
 					{
 						closeWindow();
