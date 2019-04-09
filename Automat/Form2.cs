@@ -48,6 +48,7 @@ namespace Prototype
                 Program.surname = readSurname();
                 Program.saldo = readSaldo();
                 Program.limit = readLimit();
+				s.Release();
 
                 Form1 frm = new Form1();
                 frm.Location = this.Location;

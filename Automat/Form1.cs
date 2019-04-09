@@ -25,7 +25,6 @@ namespace Prototype
 		public Form1()
 		{
 			InitializeComponent();
-			Form2.s.Release();
 			scan = new Thread(scanner);
 			scan.Start();
 		}
