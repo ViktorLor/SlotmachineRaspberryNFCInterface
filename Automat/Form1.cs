@@ -18,6 +18,7 @@ namespace Prototype
 	{
 		public static string rescan = null;
 		public static int number = 1;
+		public static bool cancel = false;
 
 		public Form1()
 		{
@@ -97,6 +98,7 @@ namespace Prototype
 
 		private void btn_cancel_Click(object sender, EventArgs e)
 		{
+			cancel = true;
 			this.Hide();
 			this.Close();
 		}
@@ -125,7 +127,10 @@ namespace Prototype
 			rescan = null;
 			while (rescan == null)
 			{
-				rescan = NFC_in();
+				if (!cancel)
+					rescan = NFC_in();
+				else
+					break;
 			}
 			if (rescan == Program.UID)
 			{

@@ -38,7 +38,7 @@
 			this.lbl_nfc.Name = "lbl_nfc";
 			this.lbl_nfc.Size = new System.Drawing.Size(390, 263);
 			this.lbl_nfc.TabIndex = 0;
-			this.lbl_nfc.Text = "Bitte NFC Scan durchführen";
+			this.lbl_nfc.Text = "Bitte NFC-Scan durchführen";
 			this.lbl_nfc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// Form2
