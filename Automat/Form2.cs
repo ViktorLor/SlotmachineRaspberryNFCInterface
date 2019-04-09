@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace Prototype
 {
     public partial class Form2 : Form
     {
-        public Form2()
+		public static Semaphore s;
+
+		public Form2()
         {
             InitializeComponent();
-        }
+			s = new Semaphore(0, 1);
+		}
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -51,6 +55,7 @@ namespace Prototype
                 frm.ShowDialog();
                 this.Hide();
                 this.Show();
+				s.WaitOne();
 
 				Program.UID = null;
             }
