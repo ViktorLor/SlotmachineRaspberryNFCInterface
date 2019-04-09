@@ -130,7 +130,6 @@ namespace Prototype
 					rescan = NFC_in();
 				else
 				{
-					process1.WaitForExit();
 					closeWindow();
 				}
 			}
