@@ -26,6 +26,14 @@ namespace Prototype
 			lbl_user.Text = Program.surname + " " + Program.name;
 			lbl_saldo.Text = string.Format("{0:F2}", Program.saldo);
 			lbl_limit.Text = string.Format("{0:F2}", Program.limit);
+
+			if((Program.saldo + Program.price) > Program.limit)
+			{
+				number = 0;
+				lbl_anz.Text = "0";
+				lbl_display_fullcnt.Text = "0";
+				lbl_fullprice.Text = string.Format("{0:F2}", "0");
+			}
 			
 			this.TopMost = true;
 			this.FormBorderStyle = FormBorderStyle.None;
@@ -79,6 +87,11 @@ namespace Prototype
 			{
 				Program.remember += 4;
 				extra++;
+			}
+
+			if (cnt * Program.price + Program.saldo > Program.limit)
+			{
+				cnt--;
 			}
 
 			number = cnt;

@@ -48,7 +48,7 @@ namespace Prototype
                 Form1 frm = new Form1();
                 frm.Location = this.Location;
                 frm.StartPosition = FormStartPosition.Manual;
-				mini();
+				norm();
 				frm.ShowDialog();
                 this.Hide();
                 this.Show();
@@ -148,7 +148,7 @@ namespace Prototype
 			this.WindowState = FormWindowState.Maximized;
 		}
 
-		public void mini()
+		public void norm()
 		{
 			this.WindowState = FormWindowState.Normal;
 		}
