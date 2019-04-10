@@ -126,8 +126,7 @@ namespace Prototype
 		}
 
 		public static void automat(int num)
-		{
-			for (int i = 0; i < num; i++)
+		{for (int i = 0; i < num; i++)
 			{
 				Process process1 = Process.Start("/bin/bash", "-c \"sudo /home/pi/Client/automat\"");
 				process1.WaitForExit();

@@ -5,7 +5,7 @@ sudo apt-get -y install mono-xsp4 subversion autoconf debhelper flex libusb-dev 
 
 #startscript
 # Mit nano ~/.config/lxsession/LXDE-pi/autostart am Ende "@/bin/bash /home/pi/startscript" einfügen. Falls es diese Ornder nicht gibt muss der Text anstatt in 
-#/etc/xdg/lxsession/LXDE-pi/autostart  eingefügt werden
+#/etc/xdg/lxsession/LXDE-pi/startscript eingefügt werden
 
 #Falls der Preis aktualisiert werden soll, muss #mono ~/ServerReadData.exe in startscript auskommentiert werden 
 #und ServerReadData.exe in ~/ eingefügt werden. 
