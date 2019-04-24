@@ -15,6 +15,7 @@ namespace Prototype
 	public partial class Form1 : Form
 	{
 		public static int number = 1;
+		public static int fullnumber = 1;
 
 		public Form1()
 		{
@@ -63,6 +64,7 @@ namespace Prototype
 			number = cnt;
 			lbl_anz.Text = cnt.ToString();
 			fullcnt = cnt + extra;
+			fullnumber = fullcnt;
 			fullprice = cnt * Program.price;
 			lbl_freegame.Text = extra.ToString();
 			lbl_display_fullcnt.Text = fullcnt.ToString();
@@ -97,6 +99,7 @@ namespace Prototype
 			number = cnt;
 			lbl_anz.Text = cnt.ToString();
 			fullcnt = cnt + extra;
+			fullnumber = fullcnt;
 			fullprice = cnt * Program.price;
 			lbl_freegame.Text = extra.ToString();
 			lbl_display_fullcnt.Text = fullcnt.ToString();

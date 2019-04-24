@@ -114,7 +114,7 @@ namespace Prototype
 
 			double.TryParse(help_2[0], out s);
 
-			return s;
+			return s / 100;
 		}
 
         private double readLimit()

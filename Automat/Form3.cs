@@ -42,7 +42,10 @@ namespace Prototype
                 if (File.Exists(Program.filepathSend + "cmdbook.txt"))
                 	File.Delete(Program.filepathSend + "cmdbook.txt");
                 lbl_information.Text = "kauf abgeschlossen";
-				Form1.automat(Form1.number);
+				Form1.automat(Form1.fullnumber);
+                Program.remember = 0;
+                Form1.number = 1;
+                Form1.fullnumber = 1;
 
 				Form1.wait(2000);
                 this.Close();
@@ -51,6 +54,9 @@ namespace Prototype
             {
                 lbl_information.Text = "Abbruch";
                 Form1.wait(2000);
+                Program.remember = 0;
+                Form1.number = 1;
+                Form1.fullnumber = 1;
                 this.Close();
             }
         }

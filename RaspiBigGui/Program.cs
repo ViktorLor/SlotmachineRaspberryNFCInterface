@@ -18,7 +18,7 @@ namespace Prototype
 		//public static string filepathResponse = @"C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\RaspiBigGui\Files\Response\";	//testing purposes
 		//public static string filepathSource = @"C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\RaspiBigGui\Files\Source\";
 		//public static string filepath = @"C:\Users\alexa\Documents\GitHub\DiplomClienten\DiplomClienten\RaspiBigGui\Files\";
-		public static int foreignsystem = 104;
+		public static int foreignsystem = 100;
 		public static string UID = null;
 		public static string name = null;
 		public static string surname = null;

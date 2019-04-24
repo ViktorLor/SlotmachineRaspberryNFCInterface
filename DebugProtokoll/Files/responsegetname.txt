@@ -1,13 +1,13 @@
-><CMD_GET_CARDINFO_RESULT>
-  <NAME1>Mustermann</NAME1>
-  <NAME2>Max</NAME2>
-  <ADDRESS>1</ADDRESS>
-  <EMAIL>abc@xy.com</EMAIL>
-  <BIRTHDATE>2001-01-24</BIRTHDATE>
+j<CMD_GET_CARDINFO_RESULT>
+  <NAME1>Willinger</NAME1>
+  <NAME2>Klara</NAME2>
+  <ADDRESS>24</ADDRESS>
+  <EMAIL>klara_simra@gmx.net</EMAIL>
+  <BIRTHDATE>1996-07-28</BIRTHDATE>
   <NOTES>
     <NOTE>
-      <TITLE>Title 1</TITLE>
-      <CONTENT>Dies ist eine Notiz</CONTENT>
+      <TITLE>AGB</TITLE>
+      <CONTENT>Die allgemeinen Geschäftsbedingungen wurden akzeptiert.</CONTENT>
     </NOTE>
   </NOTES>
 </CMD_GET_CARDINFO_RESULT>
