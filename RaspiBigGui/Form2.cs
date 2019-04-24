@@ -36,10 +36,10 @@ namespace Prototype
             this.Activated -= AfterLoading;
             while (Program.UID == null)
             {
-				maxi();
 				Program.UID = null;
                 this.Show();
-                lbl_information.Text = "Bitte NFC-Scan durchführen";
+				maxi();
+				lbl_information.Text = "Bitte NFC-Scan durchführen";
                 while (Program.UID == null)
                 {
                     Program.UID = NFC_in();
@@ -55,7 +55,7 @@ namespace Prototype
                 Form1 frm = new Form1(); //öffnen des nächsten fensters
                 frm.Location = this.Location;
                 frm.StartPosition = FormStartPosition.Manual;
-				mini();
+				norm();
                 frm.ShowDialog();
                 this.Hide();
                 this.Show();
@@ -219,7 +219,7 @@ namespace Prototype
 			this.WindowState = FormWindowState.Maximized;
 		}
 
-		public void mini()
+		public void norm()
 		{
 			this.WindowState = FormWindowState.Normal;
 		}
