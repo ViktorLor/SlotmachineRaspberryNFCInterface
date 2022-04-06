@@ -1,3 +1,3 @@
 # DiplomClienten
 
-C# Program for Raspberry Pi and NFC-Reading including a display and a GUI
+C# Program for Raspberry Pi's to automatically read NFC for different slot machines. 
